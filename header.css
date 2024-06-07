@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.one {
+    position: relative;
+    font-size: 1.1em;
+    color: snow;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 40px;
+}
+.one::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+    background: snow;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.one:hover:after {
+    transform: scaleX(1);
+}
+
+/* BUTTONS */
+
+.login {
+    width: 100px;
+    height: 100px;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid snow;
+    text-decoration: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: snow;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.login:hover{
+    background: snow;
+    color: #162938;
+}
+
+.signup {
+    width: 100px;
+    height: 100px;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid snow;
+    text-decoration: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: snow;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.signup:hover{
+    background: snow;
+    color: #162938;
+}
+
+#page-container {
+    position: relative;
+    min-height: 75vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+    /* Footer height */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    /* Footer height */
+}
+
+.navigation a.signupbutton {
+    width: 100px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid snow;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: snow;
+    font-weight: 500;
+    transition: .5s;
+}
+
+
+
