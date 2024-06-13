@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="slider.css">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/slider.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <link href="/assets/webfonts/uicons-brands.css" rel="stylesheet">
+
 </head>
     <style>
 
@@ -61,7 +62,27 @@ background-color: black;
 
     <div id="header"></div>
 
-    <div id="footer"></div>
+    
+<section class="about-us">
+    
+    <div class="row">
+        <div class="about-col">
+            <h1 style = "color:brown;font-family:Georgia, 'Times New Roman', Times, serif;font-size:50px;font-style:italic;"><ul>About Us</ul></h1>
+            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;">GoGig is a ticket  booking/selling website looking to support independant concert/gig organizers who have issues with having a safe and secure website to handle their transactions..</p>
+            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> All payments will be done on the website where we enable local gig organizers to advertise their events here. </p>
+            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> We provide an easy and reliable way for concert-goers to ensure that their booking won't be lost in the sea of payments and name-logging that the organizers have to do.</p>
+        </div>
+        <div class="about-col">
+            <img src="image1.png"> 
+        </div>
+        <h4 style = "color:brown;font-family:Georgia, 'Times New Roman', Times, serif;font-size:50px;font-style:italic">Contact Us</h4>
+        <p style = "color:white;position:absolute;top:550px;right:750px;">PHONE NUMBER:+60184066925</p>
+        <p style = "color:white;position:absolute;top:600px;right:810px;">EMAIL:Gogig@gmail.com</p>
+    </div>
+
+</section>
+
+<div id="footer"></div>
  
 
     <!-- JavaScripts -->
@@ -76,25 +97,6 @@ background-color: black;
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>
-
-<section class="about-us">
-    
-    <div class="row">
-        <div class="about-col">
-            <h1 style = "color:brown;font-family:Georgia, 'Times New Roman', Times, serif;font-size:50px;font-style:italic;"><ul>About Us</ul></h1>
-            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;">GoGig is a ticket  booking/selling website looking to support independant concert/gig organizers who have issues with having a safe and secure website to handle their transactions..</p>
-            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> All payments will be done on the website where we enable local gig organizers to advertise their events here. </p>
-            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> We provide an easy and reliable way for concert-goers to ensure that their booking won't be lost in the sea of payments and name-logging that the organizers have to do.</p>
-        </div>
-        <div class="about-col">
-            <img src="images/image1.png"> 
-        </div>
-        <h4 style = "color:brown;font-family:Georgia, 'Times New Roman', Times, serif;font-size:50px;font-style:italic">Contact Us</h4>
-        <p style = "color:white;position:absolute;top:550px;right:750px;">PHONE NUMBER:+60184066925</p>
-        <p style = "color:white;position:absolute;top:600px;right:810px;">EMAIL:Gogig@gmail.com</p>
-    </div>
-
-</section>
 
 </body>
 

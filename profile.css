@@ -30,7 +30,7 @@ body{
 }
 
 .sidebar a{
-    margin-left: 10px;
+    margin-left: 200px;
     display: block;
     color: white;
     padding-bottom: 10px;
@@ -41,7 +41,8 @@ body{
 .card{
     right: 450px;
     top:130px;
-    height: 400px;
+    height: 500px;
+    
     position: relative;
     display: flex;
     flex-direction:column;
