@@ -52,7 +52,7 @@
                 </div>
                 <div class="user_forms-signup">
                     <h2 class="forms_title">Sign Up</h2>
-                    <form class="forms_form">
+                    <form action ="includes/formhandler.inc.php" method="post" class="forms_form">
                         <fieldset class="forms_fieldset">
                             <div class="forms_field">
                                 <input type="text" name="fullname" placeholder="Full Name" class="forms_field-input" required />
