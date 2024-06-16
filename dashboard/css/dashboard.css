@@ -199,15 +199,15 @@
     display: block;
     font-style: 18px;
     color: var(--color_Light1);
+    text-align: center;
+    font-weight: bolder;
 }
 
 /* =============== Home Section =============== */
 .home {
     position: relative;
-    background-color: var(--color_Light1);
     left: 260px;
     width: calc(100% - 260px);
-    height: 100vh;
     transition: all .5s ease;
 }
 
@@ -236,7 +236,101 @@
     font-weight: 600;
 }
 
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+.card p {
+    font-size: 22px;
+    color: #6c757d;
+}
+
+.big-card-container {
+    margin-top: 50px;
+    padding: 20px;
+    border: 2px solid #dee2e6;
+    border-radius: 5px;
+    margin: 20px;
+    background: #494949;
+}
+
+.big-card-container-title {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: snow;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.big-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+    width: 90%;
+    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.big-card img {
+    border-radius: 5px;
+    margin-right: 20px;
+    width: 200px;
+    height: auto;
+}
+
+.big-card-content {
+    flex: 1;
+}
+
+.big-card h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+.big-card p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #6c757d;
+}
+
+.big-card-info {
+    text-align: right;
+}
+
+.big-card-info p {
+    margin: 5px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.big-card-info i {
+    margin-right: 10px;
+}
 
 /* ============ Responsive / Breakpoints ========== */
 @media (max-width: 1080px) {}
