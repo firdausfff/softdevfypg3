@@ -1,36 +1,38 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
     $email = $_POST['email'];
-    $password = $_POST['pwd'];
+    $pwd = $_POST['pwd'];
 
+$host = "localhost";
+$dbname = "gogigs";
+$username = "root";
+$password = "";
 
-    include_once 'dbh.inc.php';
+$mysqli = new mysqli(hostname: $host,
+                     username: $username,
+                     password: $password,
+                     database: $dbname);
 
-    //get user with email
-    $stmt = $pdo->prepare('SELECT *FROM customer_acc WHERE email = :email');
-
-    try{
-        $stmt->execute(['email'=>$email]);
-
-        if($stmt->rowCount() > 0){
-
-        }else{
-            $_SESSION['email'] = $email;
-            $_SESSION['pwd'] =$password;
-
-            $_SESSION['error'] = 'No account associated with email';
-        }
-    }
-    catch(PDOException $e){
-        die("Query failed: " . $e->getMessage());
-    }
+if ($mysqli->connect_error) {
+    die ("Connection error" . $mysqli->connect_error);
 }
+    $query = "SELECT email, password FROM customer_acc WHERE email='$email' AND password='$pwd'";
 
-else {
+    $result = $mysqli->query($query);
 
-    $_SESSION['error'] = 'FILL UP LOGIN FORM';
+   if($result->num_rows ==1){
+    //login success
+    header("Location: ../custMain.html");
+    die();
+   }else{
+    //login failed
+    header("Location: ../account.html");
+   
+    die();
+   }
+
+   $mysqli->close();
 }
-
-header('location: ../custMain.html');
-
 ?>

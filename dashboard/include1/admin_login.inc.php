@@ -1,36 +1,38 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $adminID = $_POST['admin_ID'];
-    $password = $_POST['password'];
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    include_once 'dbh.inc.php';
+    $admin_ID = $_POST['admin_ID'];
+    $pwd = $_POST['password'];
 
-    //get user with email
-    $stmt = $pdo->prepare('SELECT *FROM admin_acc WHERE admin_ID = :admin_ID');
+$host = "localhost";
+$dbname = "gogigs";
+$username = "root";
+$password = "";
 
-    try{
-        $stmt->execute(['admin_ID'=>$adminID]);
+$mysqli = new mysqli(hostname: $host,
+                     username: $username,
+                     password: $password,
+                     database: $dbname);
 
-        if($stmt->rowCount() > 0){
-
-        }else{
-            $_SESSION['admin_ID'] = $adminID;
-            $_SESSION['password'] =$password;
-
-            $_SESSION['error'] = 'No account associated with email';
-        }
-    }
-    catch(PDOException $e){
-        die("Query failed: " . $e->getMessage());
-    }
+if ($mysqli->connect_error) {
+    die ("Connection error" . $mysqli->connect_error);
 }
+    $query = "SELECT admin_ID, password FROM admin_acc WHERE admin_ID ='$admin_ID' AND password='$pwd'";
 
-else {
+    $result = $mysqli->query($query);
 
-    $_SESSION['error'] = 'FILL UP LOGIN FORM';
+   if($result->num_rows ==1){
+    //login success
+    header("Location: ../dashMain.html");
+    die();
+   }else{
+    //login failed
+    header("Location: ../adminlogin.html");
+   
+    die();
+   }
+
+   $mysqli->close();
 }
-
-header("Location: ../dashMain.html");
-
 ?>
