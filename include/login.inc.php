@@ -23,8 +23,11 @@ if ($mysqli->connect_error) {
     $result = $mysqli->query($query);
 
    if($result->num_rows ==1){
+
+
     //login success
-    header("Location: ../custMain.html");
+
+    header("Location: ../custMain.php"); 
     die();
    }else{
     //login failed
