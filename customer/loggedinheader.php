@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+$data = $_SESSION['data'];
+
+
 ?>
 
 <header>
@@ -13,9 +18,9 @@
 
 
         <div class="dropdown">
-            <button class="dropbtn">Hello <?php echo $emailcheck?></button>
+            <button class="dropbtn">Hello <?php echo $data?></button>
             <div class="dropdown-content">
-              <a href="../profile.html">Profile</a>
+              <a href="profile.html">Profile</a>
               <a href="#">My Orders</a>
               <a href="index.php">Sign Out</a>
             </div>

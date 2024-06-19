@@ -24,7 +24,7 @@ if ($mysqli->connect_error) {
 
    if($result->num_rows ==1){
     //login success
-    header("Location: ../dashMain.html");
+    header("Location: ../dashMain.php");
     die();
    }else{
     //login failed

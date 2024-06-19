@@ -1,2 +1,6 @@
 <?php
-$var = 'Nazim';
+session_start();
+
+$data = $_SESSION['data'];
+
+header("Location: ../loggedinheader.php");

@@ -27,7 +27,7 @@
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="dashMain.php" class="link">
+                    <a href="dashMain.html" class="link">
                         <i class='bx bx-grid-alt'></i>
                         <span class="name">Dashboard</span>
                     </a>
@@ -49,9 +49,9 @@
                 </div>
                 <div class="submenu">
                     <a href="#" class="link submenu-title">Events</a>
-                    <a href="current.php" class="link">Current Events</a>
-                    <a href="upcoming.php" class="link">Upcoming Events</a>
-                    <a href="past.php" class="link">Past Events</a>
+                    <a href="current.html" class="link">Current Events</a>
+                    <a href="upcoming.html" class="link">Upcoming Events</a>
+                    <a href="past.html" class="link">Past Events</a>
                 </div>
             </li>
 
@@ -59,7 +59,7 @@
             <li>
                 <div class="title">
                     <a href="#" class="link">
-                        <i class='bx bx-info-circle' ></i>
+                        <i class='bx bx-info-circle'></i>
                         <span class="name">About Us</span>
                     </a>
                 </div>
@@ -73,7 +73,7 @@
             <li>
                 <div class="title">
                     <a href="#" class="link">
-                        <i class='bx bxs-contact' ></i>
+                        <i class='bx bxs-contact'></i>
                         <span class="name">Contact Us</span>
                     </a>
                 </div>
@@ -87,7 +87,7 @@
             <li>
                 <div class="title">
                     <a href="#" class="link">
-                        <i class='bx bx-note' ></i>
+                        <i class='bx bx-note'></i>
                         <span class="name">Feedback Form</span>
                     </a>
                 </div>
@@ -122,8 +122,8 @@
                 </div>
                 <div class="submenu">
                     <a href="#" class="link submenu-title">Profile</a>
-                    <a href="adminprofile.php" class="link">View Profile</a>
-                    <a href="adminedit.php" class="link">Edit Profile</a>
+                    <a href="adminprofile.html" class="link">View Profile</a>
+                    <a href="adminedit.html" class="link">Edit Profile</a>
                 </div>
             </li>
 
@@ -149,11 +149,11 @@
             <i class='bx bx-menu'></i>
             <div class="text">Welcome back, Admin</div>
         </div>
-    
+
         <!-- FIRST EVENT -->
-    
+
         <div class="big-card-container">
-            <div class="big-card-container-title">Current Events</div>
+            <div class="big-card-container-title">Past Events</div>
             <div class="big-card">
                 <img src="event-image1.jpg" alt="Event Image">
                 <div class="big-card-content">
@@ -220,7 +220,7 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
 
     <!-- Link JS -->

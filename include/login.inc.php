@@ -26,6 +26,11 @@ if ($mysqli->connect_error) {
 
 
     //login success
+    session_start();
+    $_SESSION['data'] = $email;
+
+    header('Location ../loggedinheader.php');
+
 
     header("Location: ../custMain.php"); 
     die();

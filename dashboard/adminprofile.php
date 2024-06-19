@@ -12,6 +12,7 @@
     <!-- Styles  -->
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/adminprofile.css">
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="dashMain.php" class="link">
+                    <a href="dashMain.html" class="link">
                         <i class='bx bx-grid-alt'></i>
                         <span class="name">Dashboard</span>
                     </a>
@@ -49,9 +50,9 @@
                 </div>
                 <div class="submenu">
                     <a href="#" class="link submenu-title">Events</a>
-                    <a href="current.php" class="link">Current Events</a>
-                    <a href="upcoming.php" class="link">Upcoming Events</a>
-                    <a href="past.php" class="link">Past Events</a>
+                    <a href="current.html" class="link">Current Events</a>
+                    <a href="upcoming.html" class="link">Upcoming Events</a>
+                    <a href="past.html" class="link">Past Events</a>
                 </div>
             </li>
 
@@ -59,7 +60,7 @@
             <li>
                 <div class="title">
                     <a href="#" class="link">
-                        <i class='bx bx-info-circle' ></i>
+                        <i class='bx bx-info-circle'></i>
                         <span class="name">About Us</span>
                     </a>
                 </div>
@@ -73,7 +74,7 @@
             <li>
                 <div class="title">
                     <a href="#" class="link">
-                        <i class='bx bxs-contact' ></i>
+                        <i class='bx bxs-contact'></i>
                         <span class="name">Contact Us</span>
                     </a>
                 </div>
@@ -87,7 +88,7 @@
             <li>
                 <div class="title">
                     <a href="#" class="link">
-                        <i class='bx bx-note' ></i>
+                        <i class='bx bx-note'></i>
                         <span class="name">Feedback Form</span>
                     </a>
                 </div>
@@ -122,8 +123,8 @@
                 </div>
                 <div class="submenu">
                     <a href="#" class="link submenu-title">Profile</a>
-                    <a href="adminprofile.php" class="link">View Profile</a>
-                    <a href="adminedit.php" class="link">Edit Profile</a>
+                    <a href="adminprofile.html" class="link">View Profile</a>
+                    <a href="adminedit.html" class="link">Edit Profile</a>
                 </div>
             </li>
 
@@ -149,78 +150,38 @@
             <i class='bx bx-menu'></i>
             <div class="text">Welcome back, Admin</div>
         </div>
-    
-        <!-- FIRST EVENT -->
-    
-        <div class="big-card-container">
-            <div class="big-card-container-title">Current Events</div>
-            <div class="big-card">
-                <img src="event-image1.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 1</h2>
-                    <p><strong>Venue:</strong> Event Venue 1</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 1.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
+
+        <!-- PROFILE -->
+
+
+        <div class="profile-card">
+            <div class="title">
+                <h2>Profile Overview</h2>
             </div>
-            <div class="big-card">
-                <img src="event-image2.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 2</h2>
-                    <p><strong>Venue:</strong> Event Venue 2</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 2.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
+            <div class="header">
+                <img src="image/placeholder.png" alt="Profile Picture" class="profile-picture">
+                <button class="edit-button">Edit Profile</button>
             </div>
-            <div class="big-card">
-                <img src="event-image3.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 3</h2>
-                    <p><strong>Venue:</strong> Event Venue 3</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 3.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image4.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 4</h2>
-                    <p><strong>Venue:</strong> Event Venue 4</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 4.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image5.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 5</h2>
-                    <p><strong>Venue:</strong> Event Venue 5</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 5.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
+            <div class="profile-info">
+                <h1>Clay Jensen</h1>
+                <p><span class="flag">🇺🇸</span> Northridge, California(CA), 91326, USA</p>
+                <p>Age: 24 | Gender: Male | Status: <span class="status active">Active</span></p>
+                <hr style=" margin: 2%;">
+                <div class="details">
+                    <p><strong>Role:</strong> Administrator</p>
+                    <p><strong>Email:</strong> Example@email.com</p>
+                    <p><strong>Contact:</strong> (+61) (45687) (45687)</p>
+                    <p><strong>GitHub:</strong> GitHub Name</p>
+                    <p><strong>LinkedIn:</strong> LinkedIn Profile</p>
                 </div>
             </div>
         </div>
-        
+
+        <!-- PROFILE ACTIVITY -->
+
+        <div class="profile-activity">
+
+        </div>
     </section>
 
     <!-- Link JS -->
