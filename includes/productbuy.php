@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $pdo = null;
     $stmt = null;
 
-    header("Location: ../productpage.html");
+    header("Location: ../custMain.html");
 
     die();
    } catch (PDOException $e) {
@@ -35,5 +35,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 }else {
-    header("Location: ../productpage.html");
+    header("Location: ../index.html");
 }
