@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         create_user( $pdo,  $pwd,  $name,  $email);
 
-        header("Location: ../index.php");
+        header("Location: ../account.html");
 
         $pdo = null;
         $stmt = null;

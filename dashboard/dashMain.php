@@ -130,6 +130,7 @@
                     <a href="#" class="link submenu-title">Profile</a>
                     <a href="adminprofile.html" class="link">View Profile</a>
                     <a href="adminedit.html" class="link">Edit Profile</a>
+                    <a href="changepassword.html" class="link">Change Password</a>
                 </div>
             </li>
 

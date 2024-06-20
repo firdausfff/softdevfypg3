@@ -2,9 +2,9 @@
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $admin_ID=$_POST['adminid'];
-    $name=$_POST['name'];
-    $pwd = $_POST['newpassword'];
+    $oldpass=$_POST['oldpassword'];
+    $newpass=$_POST['newpassword'];
+    $confpass = $_POST['confirmpassword'];
    
 $host = "localhost";
 $dbname = "gogigs";
@@ -20,30 +20,33 @@ if ($mysqli->connect_error) {
     die ("Connection error" . $mysqli->connect_error);
 }
 
-    $query = "SELECT admin_ID,name
-              FROM admin_acc WHERE admin_ID='$admin_ID' 
-              AND name='$name'";
+    $query = "SELECT password
+              FROM customer_acc WHERE password='$oldpass'";
 
     $result = $mysqli->query($query);
 
    if($result->num_rows ==1){
     //verify success
+    if(!$newpass=$confpass){
+        header("Location: ../changepassword.html");
+    }
+
         $result = null;
         $query = null;
-        $query = "UPDATE  admin_acc 
-                 SET password ='$pwd'
-                 WHERE admin_ID='$admin_ID' AND name='$name'";
+        $query = "UPDATE  customer_acc 
+                 SET password ='$newpass'
+                 WHERE password='$oldpass'";
     
         $result = $mysqli->query($query);
     
         $result = null;
         $query = null;
-        header("Location: ../dashMain.php");
+        header("Location: ../custMain.html");
 
     die();
    }else{
     //verify failed
-    header("Location: ../resetpassword.html");
+    header("Location: ../changepassword.html");
    
     die();
    }
