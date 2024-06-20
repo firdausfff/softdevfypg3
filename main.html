@@ -28,9 +28,11 @@
         <!-- Image Slider -->
         <div class="slider">
             <div class="slides">
-                <div class="slide"><img src="assets/banner/banner (4).png" alt="Image 1"></div>
-                <div class="slide"><img src="assets/banner/banner (5).png" alt="Image 2"></div>
-                <div class="slide"><img src="assets/banner/banner (1).png" alt="Image 3"></div>
+                <div class="slide"><img src="assets/banner/pleasantrees.png" alt="Image 1"></div>
+                <div class="slide"><img src="assets/banner/risingfest.png" alt="Image 2"></div>
+                <div class="slide"><img src="assets/banner/indienasional.png" alt="Image 3"></div>
+                <div class="slide"><img src="assets/banner/indiepologies3.png" alt="Image 4"></div>
+                <div class="slide"><img src="assets/banner/unity.png" alt="Image 5"></div>
             </div>
             <div class="slidernavigation">
                 <button class="prev">&#10094;</button>
@@ -44,22 +46,42 @@
             <div class="card-container">
                 <div class="card">
                     <a href="productpage.html">
-                        <img src="assets/images/square (1).png" alt="Card 1">
+                        <img src="assets/images/indiepologies2.png" alt="Card 1">
                     </a>
                     <div class="content">
-                        <h2>Card Title 1</h2>
+                        <h2>Indiepologies Vol. 2 </h2>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/images/square (2).png" alt="Card 2">
+                    <a href="productpage.html">
+                    <img src="assets/images/risingfest.png" alt="Card 2">
+                    </a>
                     <div class="content">
-                        <h2>Card Title 2</h2>
+                        <h2>Rising Fest 8</h2>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/images/square (3).png" alt="Card 3">
+                    <a href="productpage.html">
+                    <img src="assets/images/pleasentrees.png" alt="Card 3">
+                    </a>
                     <div class="content">
-                        <h2>Card Title 3</h2>
+                        <h2>Pleasantrees : Thought I'd let you know</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="productpage.html">
+                    <img src="assets/images/indienasional.png" alt="Card 3">
+                    </a>
+                    <div class="content">
+                        <h2>Indienasional Vol. 6</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="productpage.html">
+                    <img src="assets/images/pitstop.png" alt="Card 3">
+                    </a>
+                    <div class="content">
+                        <h2>Pitstop DJ Night</h2>
                     </div>
                 </div>
             </div>
@@ -70,21 +92,19 @@
             <h2>Upcoming Events</h2>
             <div class="card-container">
                 <div class="card">
-                    <img src="assets/images/square (4).png" alt="Card 4">
+                    <a href="productpage.html">
+                    <img src="assets/images/indiepologies3.png" alt="Card 4">
+                    </a>
                     <div class="content">
-                        <h2>Card Title 4</h2>
+                        <h2>Indiepologies Vol. 3</h2>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/images/square (5).png" alt="Card 5">
+                    <a href="productpage.html">
+                    <img src="assets/images/unity.png" alt="Card 5">
+                    </a>
                     <div class="content">
-                        <h2>Card Title 5</h2>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="rawspiritsquare.png" alt="Card 6">
-                    <div class="content">
-                        <h2>Card Title 6</h2>
+                        <h2>Unity</h2>
                     </div>
                 </div>
             </div>
@@ -95,21 +115,27 @@
             <h2>Past Events</h2>
             <div class="card-container">
                 <div class="card">
-                    <img src="rawspiritsquare.png" alt="Card 7">
+                    <a href="productpage.html">
+                    <img src="assets/images/monsoon.png" alt="Card 7">
+                    </a>
                     <div class="content">
-                        <h2>Card Title 7</h2>
+                        <h2>Monsoon Madness</h2>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="rawspiritsquare.png" alt="Card 8">
+                    <a href="productpage.html">
+                    <img src="assets/images/rotanlot.png" alt="Card 8">
+                    </a>
                     <div class="content">
-                        <h2>Card Title 8</h2>
+                        <h2>Rotan Lot Holiday Home Market</h2>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="rawspiritsquare.png" alt="Card 9">
+                    <a href="productpage.html">
+                    <img src="assets/images/magnificent.png" alt="Card 9">
+                    </a>
                     <div class="content">
-                        <h2>Card Title 9</h2>
+                        <h2>Magnificent 8 , Volume 22</h2>
                     </div>
                 </div>
             </div>

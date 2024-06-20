@@ -64,6 +64,7 @@ body {
 .card-section h2 {
     text-align: center;
     margin: 20px 0;
+    font-size: xx-large;
 }
 
 /* Card styles */
@@ -102,6 +103,36 @@ body {
 
 .card p {
     margin: 0;
+}
+
+.shortinfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.text-box {
+    flex: 2;
+}
+
+.more-info-button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.more-info-button button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.more-info-button button:hover {
+    background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
