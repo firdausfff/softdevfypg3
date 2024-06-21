@@ -27,13 +27,13 @@
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="dashMain.html" class="link">
+                    <a href="dashMain.php" class="link">
                         <i class='bx bx-grid-alt'></i>
                         <span class="name">Dashboard</span>
                     </a>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">Dashboard</a>
+                    <a href="dashMain.php" class="link submenu-title">Dashboard</a>
                     <!-- submenu links here  -->
                 </div>
             </li>
@@ -48,23 +48,23 @@
                     <i class='bx bxs-chevron-down'></i>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">Events</a>
-                    <a href="current.html" class="link">Current Events</a>
-                    <a href="upcoming.html" class="link">Upcoming Events</a>
-                    <a href="past.html" class="link">Past Events</a>
+                    <a href="#" class="link submenu-title"><strong>Events</strong></a>
+                    <a href="current.php" class="link">Current Events</a>
+                    <a href="upcoming.php" class="link">Upcoming Events</a>
+                    <a href="past.php" class="link">Past Events</a>
                 </div>
             </li>
 
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="#" class="link">
+                    <a href="aboutus.html" class="link">
                         <i class='bx bx-info-circle'></i>
                         <span class="name">About Us</span>
                     </a>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">About Us</a>
+                    <a href="aboutus.html" class="link submenu-title">About Us</a>
                     <!-- submenu links here  -->
                 </div>
             </li>
@@ -72,7 +72,7 @@
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="#" class="link">
+                    <a href="contactus.html" class="link">
                         <i class='bx bxs-contact'></i>
                         <span class="name">Contact Us</span>
                     </a>
@@ -93,6 +93,7 @@
                 </div>
                 <div class="submenu">
                     <a href="#" class="link submenu-title">Feedback Form</a>
+                    <a href="customerlist.php" class="link">Customer List</a>
                     <!-- submenu links here  -->
                 </div>
             </li>
@@ -124,25 +125,25 @@
                     <a href="#" class="link submenu-title">Profile</a>
                     <a href="adminprofile.html" class="link">View Profile</a>
                     <a href="adminedit.html" class="link">Edit Profile</a>
+                    <a href="changepassword.html" class="link">Change Password</a>
                 </div>
             </li>
 
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="#" class="link">
+                    <a href="index.php" class="link">
                         <i class='bx bx-user-x'></i>
                         <span class="name">Log Out</span>
                     </a>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">Log Out</a>
+                    <a href="index.php" class="link submenu-title">Log Out</a>
                     <!-- submenu links here  -->
                 </div>
             </li>
         </ul>
     </div>
-
     <!-- ============= Home Section =============== -->
     <section class="home">
         <div class="toggle-sidebar">

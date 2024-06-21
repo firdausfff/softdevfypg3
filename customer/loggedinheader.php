@@ -13,7 +13,7 @@ $data = $_SESSION['data'];
         <a class="one" href="eventspage.html">Events</a>
         <a class="one" href="productpage.html">Buy Tickets</a>
         <a class="one" href="productbuy.html">Card</a>
-        <a class="one" href="#">About Us</a>
+        <a class="one" href="aboutus.html">About Us</a>
         <a class="one" href="#">FAQs</a>
 
 

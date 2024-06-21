@@ -64,13 +64,13 @@
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="../aboutus.html" class="link">
+                    <a href="aboutus.html" class="link">
                         <i class='bx bx-info-circle'></i>
                         <span class="name">About Us</span>
                     </a>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">About Us</a>
+                    <a href="aboutus.html" class="link submenu-title">About Us</a>
                     <!-- submenu links here  -->
                 </div>
             </li>
@@ -78,7 +78,7 @@
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="../contactus.html" class="link">
+                    <a href="contactus.html" class="link">
                         <i class='bx bxs-contact'></i>
                         <span class="name">Contact Us</span>
                     </a>
@@ -99,6 +99,7 @@
                 </div>
                 <div class="submenu">
                     <a href="#" class="link submenu-title">Feedback Form</a>
+                    <a href="customerlist.php" class="link">Customer List</a>
                     <!-- submenu links here  -->
                 </div>
             </li>

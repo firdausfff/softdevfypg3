@@ -38,7 +38,7 @@ if ($mysqli->connect_error) {
     
         $result = null;
         $query = null;
-        header("Location: ../custMain.html");
+        header("Location: ../custMain.php");
 
     die();
    }else{

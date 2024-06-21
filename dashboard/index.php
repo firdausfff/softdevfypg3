@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
+            flex-direction: column;
         }
 
         .login-container {
@@ -48,6 +49,21 @@
         .login-container button:hover {
             background-color: #45a049;
         }
+
+        .reset-password {
+            margin-top: 20px;
+        }
+
+        .reset-password a {
+            color: #1a271a;
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: larger
+        }
+
+        .reset-password a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -64,6 +80,10 @@
 
             <button type="submit">Login</button>
         </form>
+    </div>
+
+    <div class="reset-password">
+        <a href="resetpassword.html">Forgot Password?</a>
     </div>
 
 </body>
