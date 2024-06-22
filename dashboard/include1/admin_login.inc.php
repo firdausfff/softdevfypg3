@@ -24,6 +24,15 @@ if ($mysqli->connect_error) {
 
    if($result->num_rows ==1){
     //login success
+    $result = null;
+    $nameget = "SELECT name FROM admin_acc WHERE admin_ID ='$admin_ID' AND password='$pwd'";
+    $result = $mysqli->query($nameget);
+    while($row = $result->fetch_assoc()) {
+    $namereceive = $row["name"];    
+    }
+    session_start();
+    $_SESSION['data'] = $namereceive;
+
     header("Location: ../dashMain.php");
     die();
    }else{

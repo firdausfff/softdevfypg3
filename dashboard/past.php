@@ -78,7 +78,7 @@
                     </a>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">Contact Us</a>
+                    <a href="contactus.html" class="link submenu-title">Contact Us</a>
                     <!-- submenu links here  -->
                 </div>
             </li>
@@ -86,13 +86,13 @@
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="#" class="link">
+                    <a href="view_feedbackform.php" class="link">
                         <i class='bx bx-note'></i>
                         <span class="name">Feedback Form</span>
                     </a>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">Feedback Form</a>
+                    <a href="view_feedbackform.php" class="link submenu-title">View Feedback Form</a>
                     <a href="customerlist.php" class="link">Customer List</a>
                     <!-- submenu links here  -->
                 </div>
@@ -123,8 +123,8 @@
                 </div>
                 <div class="submenu">
                     <a href="#" class="link submenu-title">Profile</a>
-                    <a href="adminprofile.html" class="link">View Profile</a>
-                    <a href="adminedit.html" class="link">Edit Profile</a>
+                    <a href="adminprofile.php" class="link">View Profile</a>
+                    <a href="adminedit.php" class="link">Edit Profile</a>
                     <a href="changepassword.html" class="link">Change Password</a>
                 </div>
             </li>

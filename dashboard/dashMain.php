@@ -1,5 +1,27 @@
 <?php
+$host = "localhost";
+$dbname = "gogigs";
+$username = "root";
+$password = "";
 
+$mysqli = new mysqli(hostname: $host,
+                     username: $username,
+                     password: $password,
+                     database: $dbname);
+if ($mysqli->connect_error) {
+die ("Connection error" . $mysqli->connect_error);
+}
+
+$query="SELECT MAX(id)  FROM  customer_ticket;"; 
+$result = $mysqli->query($query);
+while($row = $result->fetch_assoc()) {
+    $ticketcounter = $row["MAX(id)"];    
+    }
+
+
+session_start();
+
+$name_check = $_SESSION['data'];
 
 ?>
 
@@ -84,7 +106,7 @@
                     </a>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">Contact Us</a>
+                    <a href="contactus.html" class="link submenu-title">Contact Us</a>
                     <!-- submenu links here  -->
                 </div>
             </li>
@@ -92,13 +114,13 @@
             <!-- -------- Non Dropdown List Item ------- -->
             <li>
                 <div class="title">
-                    <a href="#" class="link">
+                    <a href="view_feedbackform.php" class="link">
                         <i class='bx bx-note'></i>
                         <span class="name">Feedback Form</span>
                     </a>
                 </div>
                 <div class="submenu">
-                    <a href="#" class="link submenu-title">Feedback Form</a>
+                    <a href="view_feedbackform.php" class="link submenu-title">View Feedback Form</a>
                     <a href="customerlist.php" class="link">Customer List</a>
                     <!-- submenu links here  -->
                 </div>
@@ -129,8 +151,8 @@
                 </div>
                 <div class="submenu">
                     <a href="#" class="link submenu-title">Profile</a>
-                    <a href="adminprofile.html" class="link">View Profile</a>
-                    <a href="adminedit.html" class="link">Edit Profile</a>
+                    <a href="adminprofile.php" class="link">View Profile</a>
+                    <a href="adminedit.php" class="link">Edit Profile</a>
                     <a href="changepassword.html" class="link">Change Password</a>
                 </div>
             </li>
@@ -155,13 +177,13 @@
     <section class="home">
         <div class="toggle-sidebar">
             <i class='bx bx-menu'></i>
-            <div class="text">Welcome back, Admin</div>
+            <div class="text">Welcome back, Admin <?php echo $name_check ?></div>
         </div>
 
         <div class="card-container">
             <div class="card">
                 <h2>Number of Tickets Sold</h2>
-                <p>###</p>
+                <p><?php echo $ticketcounter ?></p>
             </div>
             <div class="card">
                 <h2>Total <br> Revenue</h2>
