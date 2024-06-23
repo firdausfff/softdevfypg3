@@ -1,3 +1,24 @@
+<?php
+session_start();
+$name_check = $_SESSION['data'];
+$admin_check = $_SESSION['admin_id_check'];
+
+
+$host = "localhost";
+$dbname = "gogigs";
+$username = "root";
+$password = "";
+
+$mysqli = new mysqli(hostname: $host,
+                     username: $username,
+                     password: $password,
+                     database: $dbname);
+
+if ($mysqli->connect_error) {
+    die ("Connection error" . $mysqli->connect_error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -157,10 +178,10 @@
 
         <div class="edit-container">
             <h2 style="font-size: xxx-large; margin-bottom: 1%;">Edit User Profile</h2>
-            <form>
+            <form action="include1/editprofile.inc.php" method="post">
                 <div class="form-group">
                     <label for="profilePicture">Profile Picture</label>
-                    <input type="file" id="profilePicture" name="profilePicture">
+                    <input type="file" id="image" name="image">
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>

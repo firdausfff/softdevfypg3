@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$data = $_SESSION['data'];
+$data = $_SESSION['name'];
 
 
 ?>
@@ -12,9 +12,8 @@ $data = $_SESSION['data'];
         <a class="one" href="custMain.html">Home</a>
         <a class="one" href="eventspage.html">Events</a>
         <a class="one" href="productpage.html">Buy Tickets</a>
-        <a class="one" href="productbuy.html">Card</a>
         <a class="one" href="aboutus.html">About Us</a>
-        <a class="one" href="#">FAQs</a>
+        <a class="one" href="#">Contact Us</a>
 
 
         <div class="dropdown">
@@ -22,7 +21,8 @@ $data = $_SESSION['data'];
             <div class="dropdown-content">
               <a href="profile.html">Profile</a>
               <a href="changepassword.html">Change Password</a>
-              <a href="#">My Orders</a>
+              <a href="#">Purchase History</a>
+              <a href="card.html">Card</a>
               <a href="index.php">Sign Out</a>
             </div>
           </div>

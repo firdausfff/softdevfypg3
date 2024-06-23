@@ -23,13 +23,16 @@ if ($mysqli->connect_error) {
     $result = $mysqli->query($query);
 
    if($result->num_rows ==1){
-
+    $result = null;
+    $nameget = "SELECT name FROM customer_acc WHERE email ='$email' AND password='$pwd'";
+    $result = $mysqli->query($nameget);
+    while($row = $result->fetch_assoc()) {
+    $namereceive = $row["name"];    
+    }
 
     //login success
     session_start();
-    $_SESSION['data'] = $email;
-
-    header('Location ../loggedinheader.php');
+    $_SESSION['name'] = $namereceive;
 
 
     header("Location: ../custMain.php"); 

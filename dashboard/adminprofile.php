@@ -1,3 +1,34 @@
+<?php
+session_start();
+$name_check = $_SESSION['data'];
+$admin_check = $_SESSION['admin_id_check'];
+
+$host = "localhost";
+$dbname = "gogigs";
+$username = "root";
+$password = "";
+
+$mysqli = new mysqli(hostname: $host,
+                     username: $username,
+                     password: $password,
+                     database: $dbname);
+if ($mysqli->connect_error) {
+die ("Connection error" . $mysqli->connect_error);
+}
+
+$query="SELECT *  FROM admin_profile WHERE admin_ID = '$admin_check';"; 
+$result = $mysqli->query($query);
+while($row = $result->fetch_assoc()) {
+    $profile_address = $row["admin_address"];
+    $profile_email = $row["admin_email"];  
+    $profile_contact= $row["admin_contact"];  
+    $profile_github = $row["admin_github"];  
+    $profile_linkedin = $row["admin_linkedin"];      
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -155,20 +186,27 @@
                 <h2>Profile Overview</h2>
             </div>
             <div class="header">
-                <img src="image/placeholder.png" alt="Profile Picture" class="profile-picture">
+                <?php
+                    $query= "SELECT img FROM admin_pfp WHERE name='$admin_check'";
+                    $result = $mysqli->query($query);
+                    while($row = $result->fetch_assoc()){
+                    $pfp_show = $row["img"];
+                    }
+               ?>
+                <img src="image/2abd0e42d24d45fc61be5bc6d88125c907cedc89.png" alt="Profile Picture" class="profile-picture">
                 <button class="edit-button">Edit Profile</button>
             </div>
             <div class="profile-info">
-                <h1>Clay Jensen</h1>
-                <p><span class="flag">🇺🇸</span> Northridge, California(CA), 91326, USA</p>
+                <h1><?php echo $name_check?></h1>
+                <p><span class="flag">Malaysia</span><?php echo $profile_address ?></p>
                 <p>Age: 24 | Gender: Male | Status: <span class="status active">Active</span></p>
                 <hr style=" margin: 2%;">
                 <div class="details">
                     <p><strong>Role:</strong> Administrator</p>
-                    <p><strong>Email:</strong> Example@email.com</p>
-                    <p><strong>Contact:</strong> (+61) (45687) (45687)</p>
-                    <p><strong>GitHub:</strong> GitHub Name</p>
-                    <p><strong>LinkedIn:</strong> LinkedIn Profile</p>
+                    <p><strong>Email:</strong> <?php echo $profile_email ?></p>
+                    <p><strong>Contact:</strong> <?php echo $profile_contact ?></p>
+                    <p><strong>GitHub:</strong> <?php echo $profile_github ?></p>
+                    <p><strong>LinkedIn:</strong> <?php echo $profile_linkedin ?></p>
                 </div>
             </div>
         </div>

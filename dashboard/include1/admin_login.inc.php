@@ -25,12 +25,14 @@ if ($mysqli->connect_error) {
    if($result->num_rows ==1){
     //login success
     $result = null;
-    $nameget = "SELECT name FROM admin_acc WHERE admin_ID ='$admin_ID' AND password='$pwd'";
-    $result = $mysqli->query($nameget);
+    $infoget = "SELECT admin_ID,name FROM admin_acc WHERE admin_ID ='$admin_ID' AND password='$pwd'";
+    $result = $mysqli->query($infoget);
     while($row = $result->fetch_assoc()) {
+    $adminreceive = $row["admin_ID"];
     $namereceive = $row["name"];    
     }
     session_start();
+    $_SESSION['admin_id_check'] = $adminreceive;
     $_SESSION['data'] = $namereceive;
 
     header("Location: ../dashMain.php");

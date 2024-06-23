@@ -11,6 +11,11 @@
         rel="stylesheet">
     <link href="/assets/webfonts/uicons-brands.css" rel="stylesheet">
 
+    <!-- Box Icons  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Styles  -->
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
     <style>
 
@@ -20,7 +25,7 @@ top: 450px;
 right:600px;
 }
 body{
-background-color: black;
+background-color: white;
 }
 .about-us{
     width: 80%;
@@ -54,7 +59,142 @@ background-color: black;
 
 </style>
 <body>
- 
+    <div class="sidebar close">
+        <!-- ========== Logo ============  -->
+        <a href="#" class="logo-box">
+            <i class='bx bxl-xing'></i>
+            <div class="logo-name">goGig</div>
+        </a>
+
+        <!-- ========== List ============  -->
+        <ul class="sidebar-list">
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="dashMain.php" class="link">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="name">Dashboard</span>
+                    </a>
+                </div>
+                <div class="submenu">
+                    <a href="dashMain.php" class="link submenu-title">Dashboard</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
+
+            <!-- -------- Dropdown List Item ------- -->
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-collection'></i>
+                        <span class="name">Events</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title"><strong>Events</strong></a>
+                    <a href="current.php" class="link">Current Events</a>
+                    <a href="upcoming.php" class="link">Upcoming Events</a>
+                    <a href="past.php" class="link">Past Events</a>
+                </div>
+            </li>
+
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="aboutus.html" class="link">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="name">About Us</span>
+                    </a>
+                </div>
+                <div class="submenu">
+                    <a href="aboutus.html" class="link submenu-title">About Us</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
+
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="contactus.html" class="link">
+                        <i class='bx bxs-contact'></i>
+                        <span class="name">Contact Us</span>
+                    </a>
+                </div>
+                <div class="submenu">
+                    <a href="contactus.html" class="link submenu-title">Contact Us</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
+
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="view_feedbackform.php" class="link">
+                        <i class='bx bx-note'></i>
+                        <span class="name">Feedback Form</span>
+                    </a>
+                </div>
+                <div class="submenu">
+                    <a href="view_feedbackform.php" class="link submenu-title">View Feedback Form</a>
+                    <a href="customerlist.php" class="link">Customer List</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
+
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bx-cog'></i>
+                        <span class="name">Settings</span>
+                    </a>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Settings</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
+
+            <!-- -------- Dropdown List Item ------- -->
+            <li class="dropdown">
+                <div class="title">
+                    <a href="#" class="link">
+                        <i class='bx bxs-user-account'></i>
+                        <span class="name">Profile</span>
+                    </a>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div class="submenu">
+                    <a href="#" class="link submenu-title">Profile</a>
+                    <a href="adminprofile.php" class="link">View Profile</a>
+                    <a href="adminedit.php" class="link">Edit Profile</a>
+                    <a href="changepassword.html" class="link">Change Password</a>
+                </div>
+            </li>
+
+            <!-- -------- Non Dropdown List Item ------- -->
+            <li>
+                <div class="title">
+                    <a href="index.php" class="link">
+                        <i class='bx bx-user-x'></i>
+                        <span class="name">Log Out</span>
+                    </a>
+                </div>
+                <div class="submenu">
+                    <a href="index.php" class="link submenu-title">Log Out</a>
+                    <!-- submenu links here  -->
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ============= Home Section =============== -->
+    <section class="home">
+        <div class="toggle-sidebar">
+            <i class='bx bx-menu'></i>
+            <div class="text">Welcome back, Admin</div>
+        </div>
 
 
     
@@ -63,24 +203,28 @@ background-color: black;
     <div class="row">
         <div class="about-col">
             <h1 style = "color:brown;font-family:Georgia, 'Times New Roman', Times, serif;font-size:50px;font-style:italic;"><ul>About Us</ul></h1>
-            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> In the sea of upcoming gigs and local concerts held by independent organizers inspired after seeing the plethora of international concerts coming to Malaysia and Singapore, such as The Eras Tour by Taylor Swift in Singapore , and Coldplay : Music of the spheres , hosted at our very own Stadium Nasional Bukit Jalil.</p>
-            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> We recognize the passion with local event organizers willing to work with their Do-It-Yourself style (DIY), having to jot down every single name, payment, and booking by hand. While we respect the effort and willingness to work with whatever resources they have, the GoGig team sees an opportunity to help.
+            <p style = "color:black;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> In the sea of upcoming gigs and local concerts held by independent organizers inspired after seeing the plethora of international concerts coming to Malaysia and Singapore, such as The Eras Tour by Taylor Swift in Singapore , and Coldplay : Music of the spheres , hosted at our very own Stadium Nasional Bukit Jalil.</p>
+            <p style = "color:black;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> We recognize the passion with local event organizers willing to work with their Do-It-Yourself style (DIY), having to jot down every single name, payment, and booking by hand. While we respect the effort and willingness to work with whatever resources they have, the GoGig team sees an opportunity to help.
             </p>
 
-            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;">GoGig is a ticket  booking/selling website looking to support independant concert/gig organizers who have issues with having a safe and secure website to handle their transactions..</p>
-            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> All payments will be done on the website where we enable local gig organizers to advertise their events here. </p>
-            <p style = "color:white;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> We provide an easy and reliable way for concert-goers to ensure that their booking won't be lost in the sea of payments and name-logging that the organizers have to do.</p>
+            <p style = "color:black;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;">GoGig is a ticket  booking/selling website looking to support independant concert/gig organizers who have issues with having a safe and secure website to handle their transactions..</p>
+            <p style = "color:black;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> All payments will be done on the website where we enable local gig organizers to advertise their events here. </p>
+            <p style = "color:black;font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"> We provide an easy and reliable way for concert-goers to ensure that their booking won't be lost in the sea of payments and name-logging that the organizers have to do.</p>
         </div>
         <div class="about-col">
             <img src="image1.png"> 
         </div>
         <h4 style = "color:brown;font-family:Georgia, 'Times New Roman', Times, serif;font-size:50px;right:450px;font-style:italic;top:750px">Contact Us</h4>
-        <p style = "color:white;position:absolute;top:950px;right:450px;">PHONE NUMBER:+60184066925</p>
-        <p style = "color:white;position:absolute;top:900px;right:500px;">EMAIL:Gogig@gmail.com</p>
+        <p style = "color:black;position:absolute;top:950px;right:450px;">PHONE NUMBER:+60184066925</p>
+        <p style = "color:black;position:absolute;top:900px;right:500px;">EMAIL:Gogig@gmail.com</p>
     </div>
 
 </section>
+</section>
+      
 
+<!-- Link JS -->
+<script src="script/dashboard.js"></script>
 
 </body>
 
