@@ -193,7 +193,7 @@ while($row = $result->fetch_assoc()) {
                     $pfp_show = $row["img"];
                     }
                ?>
-                <img src="image/2abd0e42d24d45fc61be5bc6d88125c907cedc89.png" alt="Profile Picture" class="profile-picture">
+                <img src="pfp/<?php echo $pfp_show?>" alt="Profile Picture" class="profile-picture">
                 <button class="edit-button">Edit Profile</button>
             </div>
             <div class="profile-info">

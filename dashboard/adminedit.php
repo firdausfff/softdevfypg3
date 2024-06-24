@@ -3,20 +3,65 @@ session_start();
 $name_check = $_SESSION['data'];
 $admin_check = $_SESSION['admin_id_check'];
 
+    $host = "localhost";
+    $dbname = "gogigs";
+    $username = "root";
+    $password = "";
+    
+    $mysqli = new mysqli(hostname: $host,
+                         username: $username,
+                         password: $password,
+                         database: $dbname);
+    
+    if ($mysqli->connect_error) {
+        die ("Connection error" . $mysqli->connect_error);
+    }
 
-$host = "localhost";
-$dbname = "gogigs";
-$username = "root";
-$password = "";
+    
 
-$mysqli = new mysqli(hostname: $host,
-                     username: $username,
-                     password: $password,
-                     database: $dbname);
+if (isset($_POST['savebutton'])) {
+    $filename = $_FILES["image"]["name"];
+    $tempname = $_FILES["image"]["tmp_name"];
+    $folder = "./pfp/" . $filename;
 
-if ($mysqli->connect_error) {
-    die ("Connection error" . $mysqli->connect_error);
+    $db = mysqli_connect("localhost", "root", "", "gogigs");
+ 
+    // Get all the submitted data from the form
+    $sql = "UPDATE admin_pfp  
+            SET img ='$filename'
+            WHERE name ='$admin_check'";
+ 
+    // Execute query
+    mysqli_query($db, $sql);
+
+    move_uploaded_file($tempname, $folder);
+   
+    $address = $_POST['address'];
+    $email = $_POST['email'];
+    $contact = $_POST['contactNumber'];
+    $github = $_POST['githubName'];
+    $linkedin = $_POST['linkedinProfile'];
+   
+   
+    
+
+$result = null;
+$query = null;
+
+$query = "UPDATE admin_profile  
+          SET admin_address ='$address',admin_email='$email',
+          admin_contact='$contact', admin_github='$github', admin_linkedin = '$linkedin'
+          WHERE admin_ID ='$admin_check'";
+
+$result = $mysqli->query($query);
+    
+$result = null;
+$query = null;
+
+header("Location: dashMain.php");
+die();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -178,10 +223,10 @@ if ($mysqli->connect_error) {
 
         <div class="edit-container">
             <h2 style="font-size: xxx-large; margin-bottom: 1%;">Edit User Profile</h2>
-            <form action="include1/editprofile.inc.php" method="post">
+            <form  method="post" action="" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="profilePicture">Profile Picture</label>
-                    <input type="file" id="image" name="image">
+                    <input type="file" name="image" value="" />
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
@@ -204,8 +249,10 @@ if ($mysqli->connect_error) {
                     <input type="url" id="linkedinProfile" name="linkedinProfile">
                 </div>
                 <div class="form-group">
-                    <button type="submit">Save Changes</button>
+                    <button type="submit" name="savebutton">Save Changes</button>
                 </div>
+                <div id="display-image">
+                
             </form>
         </div>
 
