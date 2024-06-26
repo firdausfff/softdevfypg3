@@ -332,6 +332,22 @@
     margin-right: 10px;
 }
 
+.remove-btn {
+    background-color: #ff4b5c; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    margin-left: 50px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: maroon; 
+}
+
 /* ============ Responsive / Breakpoints ========== */
 @media (max-width: 1080px) {}
 
