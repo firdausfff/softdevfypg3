@@ -116,7 +116,7 @@
     <script src="scripts/slider.js"></script>
     <script>
         // JavaScript to include header and footer
-        fetch('header.html')
+        fetch('customer/loggedinheader.php')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
 

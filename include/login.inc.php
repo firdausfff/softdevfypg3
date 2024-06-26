@@ -33,7 +33,7 @@ if ($mysqli->connect_error) {
     //login success
     session_start();
     $_SESSION['name'] = $namereceive;
-
+    $_SESSION['login_yes'] = 1;
 
     header("Location: ../custMain.php"); 
     die();
