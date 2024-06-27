@@ -33,6 +33,11 @@
 .form-group textarea {
     resize: vertical;
 }
+ 
+.form-group-eventType p{
+    font-weight: bold;
+    color: black;
+}
 
 button[type="submit"] {
     padding: 10px 20px;
@@ -42,6 +47,7 @@ button[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 10px;
 }
 
 button[type="submit"]:hover {
