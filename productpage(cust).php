@@ -1,3 +1,35 @@
+<?php
+$host = "localhost";
+$dbname = "gogigs";
+$username = "root";
+$password = "";
+
+$mysqli = new mysqli(hostname: $host,
+                     username: $username,
+                     password: $password,
+                     database: $dbname);
+if ($mysqli->connect_error) {
+die ("Connection error" . $mysqli->connect_error);
+}
+
+if (isset($_GET['event_names']) && !empty($_GET['event_names'])) {
+    // Retrieve and sanitize the event_name
+    $data = htmlspecialchars($_GET['event_names']);
+}
+
+    $query = "SELECT event_name,event_image, event_date_start, event_cost,event_description 
+            FROM events_current
+            WHERE event_name='$data'";
+    $result = $mysqli->query($query);
+while($row = $result->fetch_assoc()) {
+    $info_name = $row["event_name"];
+    $info_image = $row["event_image"];  
+    $info_date= $row["event_date_start"];  
+    $info_cost = $row["event_cost"];  
+    $info_desc = $row["event_description"];    
+}  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +53,13 @@
         <section class="section_section__gouit section_thinSection__4SpfK">
             <div
                 class="MuiTypography-root MuiTypography-body1 section_label__WVYlc section_xlarge__hvIfP mui-style-1tam0el">
-                <span>Pleasantrees : Thought I'd let you know</span>
+                <span><?php echo $info_name?> </span>
             </div>
         </section>
         <section class="section_section__gouit section_tightSection__Z3siX">
             <div class="section_content__7ryiz">
                 <div class="event_bannerBackground__Fepo5"><img alt="event banner"
-                        src="assets/banner/banner (1).png"
+                        src="../testing/event_images/<?php echo  $info_image?>"
                         class="event_banner__zbca2"></div>
                 <div class="event_field__lYkgZ event_border__cJ_l7">
                     <div class="event_basicInfoTable__Ufzj9">
@@ -68,7 +100,7 @@
                                             Standard</td>
                                         <td
                                             class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium rateCard_price__fzFth mui-style-zt56lu">
-                                            <span>RM&nbsp;55.00</span>
+                                            <span>RM&nbsp;<?php echo $info_cost?></span>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -76,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="event_toBuy__90XZ8"><a href="buyticket.html"><button 
+                <div class="event_toBuy__90XZ8"><a href="buyticket.php?event_names=<?php echo $info_name?>"><button 
                         class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium button_container__Hb1DM button_extra__v4rXV button_contained__m3HKX button_color-primary__nfxA6 mui-style-1ui1p20"
                         tabindex="0" type="button" style="text-transform:none"><span
                             class="button_letterSpacing__MWFlg"><span
@@ -90,14 +122,14 @@
                                 class="MuiTypography-root MuiTypography-body1 section_label__WVYlc section_large__1LkWY mui-style-1tam0el">
                                 <span>Event information</span>
                             </div>
-                            <div>Date: April 25th 2024 to July 21st, 2024<br>Opening Hours: 10:00 am – 10:00 pm (Last
+                            <div>Date: <?php echo $info_date?><br>Opening Hours: 10:00 am – 10:00 pm (Last
                                 Entry:
                                 9pm)<br>Location: CERO’ PJ, G-3-6, Parklane Commercial Park, Jalan SS 7/26, Ss 7, 47301 Petaling Jaya, Selangor
                             <div
                                 class="MuiTypography-root MuiTypography-body1 section_label__WVYlc section_large__1LkWY mui-style-1tam0el">
                                 <span>Description</span>
                             </div>
-                            <div>An independant concert held by the band Pleasantrees to support their EP Launch party, supported by indie (independant) bands such as DogTooth.
+                            <div><?php echo $info_desc?>
                             </div>
                         </div>
                     </div>
