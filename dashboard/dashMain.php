@@ -17,6 +17,16 @@ $result = $mysqli->query($query);
 while($row = $result->fetch_assoc()) {
     $ticketcounter = $row["MAX(id)"];    
     }
+$query = null;
+$result = null;
+
+$query="SELECT MAX(id)  FROM  events_current;"; 
+$result = $mysqli->query($query);
+while($row = $result->fetch_assoc()) {
+    $eventcounter = $row["MAX(id)"];    
+    }
+    $query = null;
+    $result = null;
 
 
 session_start();
@@ -74,7 +84,7 @@ session_abort();
             </div>
             <div class="card">
                 <h2>Number of Events Held</h2>
-                <p>###</p>
+                <p><?php echo $eventcounter ?></p>
             </div>
         </div>
 
@@ -82,214 +92,97 @@ session_abort();
 
         <div class="big-card-container">
             <div class="big-card-container-title">Current Events</div>
-            <div class="big-card">
-                <img src="event-image1.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 1</h2>
-                    <p><strong>Venue:</strong> Event Venue 1</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 1.</p>
+            <?php
+            $sql = "SELECT event_name, event_image, event_date_start,event_cost,event_location,event_description,events_ticketavail
+                     FROM events_current 
+                     WHERE event_expiry='upcoming'";
+
+            $result = $mysqli-> query($sql);
+            
+                if($result-> num_rows>0){
+                    while ($row = $result-> fetch_assoc()){
+                     echo "<div class='big-card'>
+                <img src='event_images/". $row["event_image"]."' alt='Event Image'>
+                <div class='big-card-content'>
+                    <h2>". $row["event_name"]."</h2>
+                    <p><strong>Venue:</strong>". $row["event_location"]."</p>
+                    <p><strong>Description:</strong> ". $row["event_description"]."</p>
                 </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
+                <div class='big-card-info'>
+                    <p><i class='fas fa-dollar-sign'></i> Price: $". $row["event_cost"]."</p>
+                    <p><i class='fas fa-calendar-alt'></i> Date: ". $row["event_date_start"]."</p>
+                    <p><i class='fas fa-ticket-alt'></i> Tickets Left: ". $row["events_ticketavail"]."</p>
                 </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image2.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 2</h2>
-                    <p><strong>Venue:</strong> Event Venue 2</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 2.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image3.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 3</h2>
-                    <p><strong>Venue:</strong> Event Venue 3</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 3.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image4.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 4</h2>
-                    <p><strong>Venue:</strong> Event Venue 4</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 4.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image5.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 5</h2>
-                    <p><strong>Venue:</strong> Event Venue 5</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 5.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-        </div>
+            </div>";
+                    }
+                    
+                }
+            echo "</div>";
+            ?>
 
         <!-- UPCOMING EVENT -->
 
         <div class="big-card-container">
             <div class="big-card-container-title">Upcoming Events</div>
-            <div class="big-card">
-                <img src="event-image1.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 1</h2>
-                    <p><strong>Venue:</strong> Event Venue 1</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 1.</p>
+            <?php
+            $sql = "SELECT event_name, event_image, event_date_start,event_cost,event_location,event_description,events_ticketavail
+                     FROM events_current 
+                     WHERE event_expiry='upcoming'";
+
+            $result = $mysqli-> query($sql);
+            
+                if($result-> num_rows>0){
+                    while ($row = $result-> fetch_assoc()){
+                     echo "<div class='big-card'>
+                <img src='event_images/". $row["event_image"]."' alt='Event Image'>
+                <div class='big-card-content'>
+                    <h2>". $row["event_name"]."</h2>
+                    <p><strong>Venue:</strong>". $row["event_location"]."</p>
+                    <p><strong>Description:</strong> ". $row["event_description"]."</p>
                 </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
+                <div class='big-card-info'>
+                    <p><i class='fas fa-dollar-sign'></i> Price: $". $row["event_cost"]."</p>
+                    <p><i class='fas fa-calendar-alt'></i> Date: ". $row["event_date_start"]."</p>
+                    <p><i class='fas fa-ticket-alt'></i> Tickets Left: ". $row["events_ticketavail"]."</p>
                 </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image2.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 2</h2>
-                    <p><strong>Venue:</strong> Event Venue 2</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 2.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image3.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 3</h2>
-                    <p><strong>Venue:</strong> Event Venue 3</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 3.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image4.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 4</h2>
-                    <p><strong>Venue:</strong> Event Venue 4</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 4.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image5.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 5</h2>
-                    <p><strong>Venue:</strong> Event Venue 5</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 5.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-        </div>
+            </div>";
+                    }
+                    
+                }
+            echo "</div>";
+            ?>
 
         <!-- PAST EVENT -->
 
         <div class="big-card-container">
             <div class="big-card-container-title">Past Events</div>
-            <div class="big-card">
-                <img src="event-image1.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 1</h2>
-                    <p><strong>Venue:</strong> Event Venue 1</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 1.</p>
+            <?php
+            $sql = "SELECT event_name, event_image, event_date_start,event_cost,event_location,event_description,events_ticketavail
+                     FROM events_current 
+                     WHERE event_expiry='upcoming'";
+
+            $result = $mysqli-> query($sql);
+            
+                if($result-> num_rows>0){
+                    while ($row = $result-> fetch_assoc()){
+                     echo "<div class='big-card'>
+                <img src='event_images/". $row["event_image"]."' alt='Event Image'>
+                <div class='big-card-content'>
+                    <h2>". $row["event_name"]."</h2>
+                    <p><strong>Venue:</strong>". $row["event_location"]."</p>
+                    <p><strong>Description:</strong> ". $row["event_description"]."</p>
                 </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
+                <div class='big-card-info'>
+                    <p><i class='fas fa-dollar-sign'></i> Price: $". $row["event_cost"]."</p>
+                    <p><i class='fas fa-calendar-alt'></i> Date: ". $row["event_date_start"]."</p>
+                    <p><i class='fas fa-ticket-alt'></i> Tickets Left: ". $row["events_ticketavail"]."</p>
                 </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image2.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 2</h2>
-                    <p><strong>Venue:</strong> Event Venue 2</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 2.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image3.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 3</h2>
-                    <p><strong>Venue:</strong> Event Venue 3</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 3.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image4.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 4</h2>
-                    <p><strong>Venue:</strong> Event Venue 4</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 4.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-            <div class="big-card">
-                <img src="event-image5.jpg" alt="Event Image">
-                <div class="big-card-content">
-                    <h2>Event Title 5</h2>
-                    <p><strong>Venue:</strong> Event Venue 5</p>
-                    <p><strong>Description:</strong> This is a brief description of the event 5.</p>
-                </div>
-                <div class="big-card-info">
-                    <p><i class="fas fa-dollar-sign"></i> Price: $XX</p>
-                    <p><i class="fas fa-calendar-alt"></i> Date: MM/DD/YYYY</p>
-                    <p><i class="fas fa-ticket-alt"></i> Tickets Left: XXX</p>
-                </div>
-            </div>
-        </div>
+            </div>";
+                    }
+                    
+                }
+            echo "</div>";
+            ?>
 
     </section>
 

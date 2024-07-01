@@ -54,9 +54,13 @@ die ("Connection error" . $mysqli->connect_error);
 
         <div class="big-card-container">
             <div class="big-card-container-title">Remove Events</div>
+
+            <div class="big-card-container">
+            <div class="big-card-container-title">Remove Current Events</div>
             <?php
             $sql = "SELECT event_name, event_image, event_date_start,event_cost,event_location,event_description,events_ticketavail
-                     FROM events_current ";
+                     FROM events_current 
+                     WHERE event_expiry='current'";
 
             $result = $mysqli-> query($sql);
             
@@ -74,12 +78,80 @@ die ("Connection error" . $mysqli->connect_error);
                     <p><i class='fas fa-calendar-alt'></i> Date: ". $row["event_date_start"]."</p>
                     <p><i class='fas fa-ticket-alt'></i> Tickets Left: ". $row["events_ticketavail"]."</p>
                 </div>
-                <button class='remove-btn'>Remove</button>
+                <button class='remove-btn'><a href='deleteevent.inc.php?event_names=" . urlencode($row['event_name']) . "'>Remove</a></button>
             </div>";
                     }
                     
                 }
+            echo "</div>";
             ?>
+
+        <!-- REMOVE UPCOMING EVENT -->
+
+        <div class="big-card-container">
+            <div class="big-card-container-title">Remove Upcoming Events</div>
+            <?php
+            $sql = "SELECT event_name, event_image, event_date_start,event_cost,event_location,event_description,events_ticketavail
+                     FROM events_current 
+                     WHERE event_expiry='upcoming'";
+
+            $result = $mysqli-> query($sql);
+            
+                if($result-> num_rows>0){
+                    while ($row = $result-> fetch_assoc()){
+                     echo "<div class='big-card'>
+                <img src='event_images/". $row["event_image"]."' alt='Event Image'>
+                <div class='big-card-content'>
+                    <h2>". $row["event_name"]."</h2>
+                    <p><strong>Venue:</strong>". $row["event_location"]."</p>
+                    <p><strong>Description:</strong> ". $row["event_description"]."</p>
+                </div>
+                <div class='big-card-info'>
+                    <p><i class='fas fa-dollar-sign'></i> Price: $". $row["event_cost"]."</p>
+                    <p><i class='fas fa-calendar-alt'></i> Date: ". $row["event_date_start"]."</p>
+                    <p><i class='fas fa-ticket-alt'></i> Tickets Left: ". $row["events_ticketavail"]."</p>
+                </div>
+                <button class='remove-btn'><a href='deleteevent.inc.php?event_names=" . urlencode($row['event_name']) . "'>Remove</a></button>
+            </div>";
+                    }
+                    
+                }
+            echo "</div>";
+            ?>
+
+        <!-- REMOVE PAST EVENT -->
+
+        <div class="big-card-container">
+            <div class="big-card-container-title">Remove Past Events</div>
+            <?php
+            $sql = "SELECT event_name, event_image, event_date_start,event_cost,event_location,event_description,events_ticketavail
+                     FROM events_current 
+                     WHERE event_expiry='past'";
+
+            $result = $mysqli-> query($sql);
+            
+                if($result-> num_rows>0){
+                    while ($row = $result-> fetch_assoc()){
+                     echo "<div class='big-card'>
+                <img src='event_images/". $row["event_image"]."' alt='Event Image'>
+                <div class='big-card-content'>
+                    <h2>". $row["event_name"]."</h2>
+                    <p><strong>Venue:</strong>". $row["event_location"]."</p>
+                    <p><strong>Description:</strong> ". $row["event_description"]."</p>
+                </div>
+                <div class='big-card-info'>
+                    <p><i class='fas fa-dollar-sign'></i> Price: $". $row["event_cost"]."</p>
+                    <p><i class='fas fa-calendar-alt'></i> Date: ". $row["event_date_start"]."</p>
+                    <p><i class='fas fa-ticket-alt'></i> Tickets Left: ". $row["events_ticketavail"]."</p>
+                </div>
+                <button class='remove-btn'><a href='deleteevent.inc.php?event_names=" . urlencode($row['event_name']) . "'>Remove</a></button>
+            </div>";
+                    }
+                    
+                }
+            echo "</div>";
+            ?>
+            
             <!--<div class="big-card">
                 <img src="event-image1.jpg" alt="Event Image">
                 <div class="big-card-content">
