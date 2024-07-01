@@ -236,6 +236,13 @@
     font-weight: 600;
 }
 
+.home .page-events-header {
+    text-align: center;
+    font-size: 75px;
+    font-weight: bold;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
 .card-container {
     display: flex;
     justify-content: center;
