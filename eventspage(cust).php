@@ -125,7 +125,7 @@ $result = $mysqli-> query($sql);
             <?php
             $sql = "SELECT event_name,event_image, event_date_start, event_cost,event_description 
             FROM events_current
-            WHERE event_expiry='upcoming'";
+            WHERE event_expiry='past'";
 $result = $mysqli-> query($sql);
             if($result-> num_rows>0){
                 while ($row = $result-> fetch_assoc()){

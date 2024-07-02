@@ -23,7 +23,24 @@ if ($mysqli->connect_error) {
     die ("Connection error" . $mysqli->connect_error);
 }
 
+if (isset($_GET['event_names']) && !empty($_GET['event_names'])) {
+    // Retrieve and sanitize the event_name
+    $data = htmlspecialchars($_GET['event_names']);
+}
+$query = "SELECT event_name,event_image, event_date_start, event_cost,event_description 
+            FROM events_current
+            WHERE event_name='$data'";
+    $result = $mysqli->query($query);
+while($row = $result->fetch_assoc()) {
+    $info_name = $row["event_name"];
+    $info_image = $row["event_image"];  
+    $info_date= $row["event_date_start"];  
+    $info_cost = $row["event_cost"];  
+    $info_desc = $row["event_description"];    
+}  
 
+$query=null;
+$result=null;
     
     $query = "SELECT fullname,email,cardname,cardnumber,cvv 
               FROM card_information WHERE fullname='$custname' 
@@ -43,19 +60,19 @@ if ($mysqli->connect_error) {
     }
         $result = null;
         $query = null;
-        $query = "INSERT INTO customer_ticket (ticket_id, Cust_Name, Cust_Email) VALUES  (?, ?, ?);";
+        $query = "INSERT INTO customer_ticket (ticket_id, Cust_Name, Cust_Email, event_name, cost) VALUES  (?, ?, ?, ?, ?);";
     
         $result = $mysqli->prepare($query);
-        $result->execute([$ticketid,$custname, $custemail]);
+        $result->execute([$ticketid,$custname, $custemail, $data, $info_cost ]);
     
         $result = null;
         $query = null;
-        header("Location: ../custMain.html");
+        header("Location: ../custMain.php");
 
     die();
    }else{
     //verify failed
-    header("Location: ../buyticket.html");
+    header("Location: ../buyticket.php");
    
     die();
    }

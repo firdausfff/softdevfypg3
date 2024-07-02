@@ -20,6 +20,20 @@ while($row = $result->fetch_assoc()) {
 $query = null;
 $result = null;
 
+$query="SELECT SUM(cost)
+FROM customer_ticket";
+
+$result =$mysqli->query($query);
+
+while ($row = $result->fetch_assoc()) {
+$sumcheck = $row["SUM(cost)"];
+}
+
+
+
+$query = null;
+$result = null;
+
 $query="SELECT MAX(id)  FROM  events_current;"; 
 $result = $mysqli->query($query);
 while($row = $result->fetch_assoc()) {
@@ -80,7 +94,7 @@ session_abort();
             </div>
             <div class="card">
                 <h2>Total <br> Revenue</h2>
-                <p>###</p>
+                <p>$<?php echo strval($sumcheck) ?></p>
             </div>
             <div class="card">
                 <h2>Number of Events Held</h2>
@@ -95,7 +109,7 @@ session_abort();
             <?php
             $sql = "SELECT event_name, event_image, event_date_start,event_cost,event_location,event_description,events_ticketavail
                      FROM events_current 
-                     WHERE event_expiry='upcoming'";
+                     WHERE event_expiry='current'";
 
             $result = $mysqli-> query($sql);
             
@@ -159,7 +173,7 @@ session_abort();
             <?php
             $sql = "SELECT event_name, event_image, event_date_start,event_cost,event_location,event_description,events_ticketavail
                      FROM events_current 
-                     WHERE event_expiry='upcoming'";
+                     WHERE event_expiry='past'";
 
             $result = $mysqli-> query($sql);
             
