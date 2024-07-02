@@ -20,7 +20,7 @@ $data = $_SESSION['name'];
           <div class="dropdown-content">
             <a href="profile.html">Profile</a>
             <a href="changepassword.html">Change Password</a>
-            <a href="#">Purchase History</a>
+            <a href="../purchasehistory.html">Purchase History</a>
             <a href="card.html">Card</a>
             <a href="index.php">Sign Out</a>
           </div>
