@@ -27,7 +27,7 @@ if (isset($_GET['event_names']) && !empty($_GET['event_names'])) {
     // Retrieve and sanitize the event_name
     $data = htmlspecialchars($_GET['event_names']);
 }
-$query = "SELECT event_name,event_image, event_date_start, event_cost,event_description 
+$query = "SELECT event_name,event_image, event_date_start, event_cost,event_description,event_location
             FROM events_current
             WHERE event_name='$data'";
     $result = $mysqli->query($query);
@@ -36,7 +36,8 @@ while($row = $result->fetch_assoc()) {
     $info_image = $row["event_image"];  
     $info_date= $row["event_date_start"];  
     $info_cost = $row["event_cost"];  
-    $info_desc = $row["event_description"];    
+    $info_desc = $row["event_description"];  
+    $info_venue = $row["event_location"];
 }  
 
 $query=null;
@@ -60,13 +61,31 @@ $result=null;
     }
         $result = null;
         $query = null;
-        $query = "INSERT INTO customer_ticket (ticket_id, Cust_Name, Cust_Email, event_name, cost) VALUES  (?, ?, ?, ?, ?);";
+        $query = "INSERT INTO customer_ticket (ticket_id, Cust_Name, Cust_Email, event_name, cost, ticket_venue, event_image) VALUES  (?, ?, ?, ?, ?, ?, ?);";
     
         $result = $mysqli->prepare($query);
-        $result->execute([$ticketid,$custname, $custemail, $data, $info_cost ]);
+        $result->execute([$ticketid,$custname, $custemail, $data, $info_cost,$info_venue,$info_image ]);
     
         $result = null;
         $query = null;
+
+        $query ="SELECT events_ticketavail 
+        FROM events_current
+        WHERE event_name='$data'";
+        $result = $mysqli->query($query);
+        while($row = $result->fetch_assoc()) {
+            $oldticket = $row["events_ticketavail"];
+        }  
+        $thenumber=1;
+        $newticket = $oldticket-$thenumber;
+
+        $result = null;
+        $query = null;
+
+        $query ="UPDATE events_current 
+        SET events_ticketavail='$newticket'
+        WHERE event_name='$data'";
+
         header("Location: ../custMain.php");
 
     die();

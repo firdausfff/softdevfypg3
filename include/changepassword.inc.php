@@ -28,7 +28,7 @@ if ($mysqli->connect_error) {
    if($result->num_rows ==1){
     //verify success
     if(!$newpass=$confpass){
-        header("Location: ../changepassword.html");
+        header("Location: ../main.html");
     }
 
         $result = null;

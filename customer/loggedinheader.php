@@ -18,9 +18,9 @@ $data = $_SESSION['name'];
       <div class="dropdown">
           <button class="dropbtn">Hello <?php echo $data?></button>
           <div class="dropdown-content">
-            <a href="profile.html">Profile</a>
+            <a href="profile_inc.php">Profile</a>
             <a href="changepassword.html">Change Password</a>
-            <a href="../purchasehistory.html">Purchase History</a>
+            <a href="purchasehistory.php">Purchase History</a>
             <a href="card.html">Card</a>
             <a href="index.php">Sign Out</a>
           </div>
