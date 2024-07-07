@@ -19,7 +19,6 @@ $data = $_SESSION['name'];
           <button class="dropbtn">Hello <?php echo $data?></button>
           <div class="dropdown-content">
             <a href="profile_inc.php">Profile</a>
-            <a href="changepassword.html">Change Password</a>
             <a href="purchasehistory.php">Purchase History</a>
             <a href="card.html">Card</a>
             <a href="index.php">Sign Out</a>
