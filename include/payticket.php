@@ -1,4 +1,6 @@
 <?php
+session_start();
+$accountname = $_SESSION['name'];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -59,12 +61,20 @@ $result=null;
         $data_check=null;
         $data_check = "SELECT ticket_id FROM customer_ticket Where ticket_id='$ticketid'";
     }
+    $result = null;
+        $query = null;
+    $query = "SELECT name,email FROM customer_acc WHERE name='$accountname'";
+    $result = $mysqli->query($query);
+        while($row = $result->fetch_assoc()) {
+            $customer_name = $row["name"];
+            $customer_email= $row["email"];
+        }  
         $result = null;
         $query = null;
         $query = "INSERT INTO customer_ticket (ticket_id, Cust_Name, Cust_Email, event_name, cost, ticket_venue, event_image) VALUES  (?, ?, ?, ?, ?, ?, ?);";
     
         $result = $mysqli->prepare($query);
-        $result->execute([$ticketid,$custname, $custemail, $data, $info_cost,$info_venue,$info_image ]);
+        $result->execute([$ticketid,$customer_name, $customer_email, $data, $info_cost,$info_venue,$info_image ]);
     
         $result = null;
         $query = null;
@@ -85,6 +95,7 @@ $result=null;
         $query ="UPDATE events_current 
         SET events_ticketavail='$newticket'
         WHERE event_name='$data'";
+        $result = $mysqli->query($query);
 
         header("Location: ../custMain.php");
 
