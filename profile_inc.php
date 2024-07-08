@@ -34,6 +34,10 @@ if (isset($_SESSION['name'])) {
         $user_birthday = $row["birthday"];
         $user_state = $row["state"];
         $user_number = $row["phone_number"];
+        $user_twitter = $row["twittercreds"];
+        $user_facebook = $row["fbcreds"];
+        $user_instagram = $row["igcreds"];
+        
     } else {
         echo "Error: No user found with ID $user_check";
     }
@@ -108,7 +112,7 @@ if (isset($_SESSION['name'])) {
                                         <input type="email" class="form-control mb-1" id="email" name="email" value="<?php echo ($user_email) ?>">
                                         <div class="alert alert-warning mt-3">
                                             Your email is not confirmed. Please check your inbox.<br>
-                                            <a href="javascript:void(0)">Resend confirmation</a>
+                                            <a href="javascript:void(0)" id="resend-confirmation-link">Resend confirmation</a>
                                         </div>
                                     </div>
                                     <div class="text-right mt-3">
@@ -186,19 +190,25 @@ if (isset($_SESSION['name'])) {
                             </div>
                         </div>
                         <div class="tab-pane fade" id="account-social-links">
-                            <div class="card-body pb-2">
-                                <div class="form-group">
-                                    <label class="form-label">Twitter</label>
-                                    <input type="text" class="form-control" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Facebook</label>
-                                    <input type="text" class="form-control" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Instagram</label>
-                                    <input type="text" class="form-control" value="">
-                                </div>
+                            <form action ="update_profile_social.php" method="post">
+                                <div class="card-body pb-2">
+                                    <div class="form-group">
+                                        <label class="form-label">Twitter</label>
+                                        <input type="text" class="form-control" name="twitter" value="<?php echo htmlspecialchars($user_twitter); ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Facebook</label>
+                                        <input type="text" class="form-control" name="facebook" value="<?php echo htmlspecialchars($user_facebook); ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Instagram</label>
+                                        <input type="text" class="form-control" name="instagram" value="<?php echo htmlspecialchars($user_instagram); ?>">
+                                    </div>
+                                    <div class="text-right mt-3">
+                                        <button type="submit" class="btn btn-primary" name="savebtn">Save changes</button>&nbsp;
+                                        <button type="button" class="btn btn-default" name="cancelbtn">Cancel</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="account-connections">
@@ -288,6 +298,11 @@ if (isset($_SESSION['name'])) {
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+    <script>
+    document.getElementById('resend-confirmation-link').addEventListener('click', function() {
+    alert('Confirmation email has been resent. Please check your inbox.');
+    });
     </script>
 </body>
 </html>
