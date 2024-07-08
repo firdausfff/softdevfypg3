@@ -38,6 +38,84 @@ while($row = $result->fetch_assoc()) {
 
 <head>
     <title>buy Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .user {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .forms_title {
+            margin-bottom: 20px;
+            font-size: 50px;
+            text-align: center;
+            color: #333;
+        }
+
+        .forms_fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        .forms_field {
+            margin-bottom: 20px;
+        }
+
+        .forms_field-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        .forms_field-input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .forms_field label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 30px;
+            color: #333;
+        }
+
+        .forms_buttons {
+            text-align: center;
+        }
+
+        .forms_buttons-action {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .forms_buttons-action:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
