@@ -6,8 +6,11 @@ $data = $_SESSION['name'];
 ?>
 
 <header>
-<h2 class="logo">Logo</h2>
-  <nav class="navigation">
+  <a href="custMain.php.">
+      <img src="../assets/logo/Untitled design.png" alt="Logo" style="height: 100px;">
+  </a>  
+  <h2 class="logo"></h2>
+      <nav class="navigation">
       <a class="one" href="custMain.php">Home</a>
       <a class="one" href="eventspage(cust).php">Events</a>
       <a class="one" href="productpage(cust).html">Buy Tickets</a>
