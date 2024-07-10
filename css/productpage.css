@@ -320,9 +320,9 @@ button.event_back__j_1Cu:hover {
 *,
 :after,
 :before {
-    margin: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
+    margin-right:150px;
 }
 
 img {

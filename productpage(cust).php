@@ -17,7 +17,7 @@ if (isset($_GET['event_names']) && !empty($_GET['event_names'])) {
     $data = htmlspecialchars($_GET['event_names']);
 }
 
-    $query = "SELECT event_name,event_image, event_date_start, event_cost,event_description 
+    $query = "SELECT event_name,event_image, event_date_start, event_cost,event_description,events_ticketavail 
             FROM events_current
             WHERE event_name='$data'";
     $result = $mysqli->query($query);
@@ -26,7 +26,8 @@ while($row = $result->fetch_assoc()) {
     $info_image = $row["event_image"];  
     $info_date= $row["event_date_start"];  
     $info_cost = $row["event_cost"];  
-    $info_desc = $row["event_description"];    
+    $info_desc = $row["event_description"];
+    $info_ticketsavail = $row["events_ticketavail"];    
 }  
 ?>
 
@@ -89,8 +90,10 @@ while($row = $result->fetch_assoc()) {
                                     <tr class="MuiTableRow-root MuiTableRow-head mui-style-146ytku">
                                         <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium mui-style-5ekb2p"
                                             scope="col">Package Options</th>
-                                        <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium mui-style-5ekb2p"
+                                        <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium mui-style-5ekb2p" 
                                             scope="col">Price</th>
+                                            <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium mui-style-5ekb2p"
+                                            scope="col">Tickets Left</th>    
                                     </tr>
                                 </thead>
                                 <tbody class="MuiTableBody-root mui-style-1xnox0e">
@@ -102,20 +105,39 @@ while($row = $result->fetch_assoc()) {
                                             class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium rateCard_price__fzFth mui-style-zt56lu">
                                             <span>RM&nbsp;<?php echo $info_cost?></span>
                                         </td>
+                                        <td
+                                            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium mui-style-zt56lu">
+                                            <?php echo $info_ticketsavail?></td>
+                                            
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="event_toBuy__90XZ8"><a href="buyticket.php?event_names=<?php echo $info_name?>"><button 
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium button_container__Hb1DM button_extra__v4rXV button_contained__m3HKX button_color-primary__nfxA6 mui-style-1ui1p20"
-                        tabindex="0" type="button" style="text-transform:none"><span
-                            class="button_letterSpacing__MWFlg"><span
-                                class="fa notranslate MuiIcon-root MuiIcon-fontSizeMedium fa-ticket-simple mui-style-u2bwxw"
-                                aria-hidden="true"></span>&nbsp; <!-- -->Purchase Tickets</span><span
-                            class="MuiTouchRipple-root mui-style-w0pj6f"></span></button></a></div>
-                <section class="section_section__gouit section_thinSection__4SpfK">
+                <?php
+                if($info_ticketsavail==0 || $info_ticketsavail<=0){
+                    echo "<div class='event_toBuy__90XZ8'><button 
+                    class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium button_container__Hb1DM button_extra__v4rXV button_contained__m3HKX button_color-primary__nfxA6 mui-style-1ui1p20'
+                    tabindex='0' type='button' style='text-transform:none'><span
+                        class='button_letterSpacing__MWFlg'><span
+                            class='fa notranslate MuiIcon-root MuiIcon-fontSizeMedium fa-ticket-simple mui-style-u2bwxw'
+                            aria-hidden='true'></span>&nbsp; NO TICKETS AVAILABLE</span><span
+                        class='MuiTouchRipple-root mui-style-w0pj6f'></span></button></div>";
+
+                }   else{
+                echo "<div class='event_toBuy__90XZ8'><a href='buyticket.php?event_names=" . urlencode($info_name) . "'><button 
+                        class='MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium button_container__Hb1DM button_extra__v4rXV button_contained__m3HKX button_color-primary__nfxA6 mui-style-1ui1p20'
+                        tabindex='0' type='button' style='text-transform:none'><span
+                            class='button_letterSpacing__MWFlg'><span
+                                class='fa notranslate MuiIcon-root MuiIcon-fontSizeMedium fa-ticket-simple mui-style-u2bwxw'
+                                aria-hidden='true'></span>&nbsp; Purchase Tickets</span><span
+                            class='MuiTouchRipple-root mui-style-w0pj6f'></span></button></a></div>";
+
+                }
+
+                ?>
+                <section class='section_section__gouit section_thinSection__4SpfK'>
                     <div class="section_content__7ryiz">
                         <div class="section_markdown__QYCDv">
                             <div

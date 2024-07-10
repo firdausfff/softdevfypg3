@@ -103,7 +103,7 @@ if (isset($_POST['editevent'])) {
     <section class="home">
         <div class="toggle-sidebar">
             <i class='bx bx-menu'></i>
-            <div class="text">Welcome back, Admin</div>
+            <div class="text">Welcome back, Admins</div>
         </div>
 
         <!-- ADD EVENT CONTAINER -->
@@ -125,7 +125,7 @@ if (isset($_POST['editevent'])) {
                     </div>
                     <div class="form-group">
                         <label for="event-description">Description</label>
-                        <textarea id="event-description" name="event-description" required></textarea>
+                        <input type="text" id="event-description" name="event-description" value="<?php echo $before_desc?>" required>
                     </div>
                     <div class="form-group" style="width: 20%;">
                         <label for="event-price">Price</label>

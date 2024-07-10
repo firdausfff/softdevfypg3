@@ -65,7 +65,6 @@ $result = $mysqli-> query($sql);
                         <h2>".$row['event_name']. "</h2>
                         <div class='shortinfo'>
                             <div class='text-box'>
-                                <p>Description:" .$row["event_description"] ."</p>
                                 <p>Date:" .$row["event_date_start"] ."</p>
                                 <p>Price: $".$row["event_cost"] ."</p>
                             </div>
@@ -101,7 +100,6 @@ $result = $mysqli-> query($sql);
                         <h2>".$row['event_name']. "</h2>
                         <div class='shortinfo'>
                             <div class='text-box'>
-                                <p>Description:" .$row["event_description"] ."</p>
                                 <p>Date:" .$row["event_date_start"] ."</p>
                                 <p>Price: $".$row["event_cost"] ."</p>
                             </div>
@@ -137,7 +135,6 @@ $result = $mysqli-> query($sql);
                         <h2>".$row['event_name']. "</h2>
                         <div class='shortinfo'>
                             <div class='text-box'>
-                                <p>Description:" .$row["event_description"] ."</p>
                                 <p>Date:" .$row["event_date_start"] ."</p>
                                 <p>Price: $".$row["event_cost"] ."</p>
                             </div>

@@ -81,7 +81,7 @@ if (isset($_POST['addevent'])) {
     <section class="home">
         <div class="toggle-sidebar">
             <i class='bx bx-menu'></i>
-            <div class="text">Welcome back, Admin</div>
+            <div class="text">Welcome back, Admin <?php echo $name_check ?></div>
         </div>
 
         <!-- ADD EVENT CONTAINER -->

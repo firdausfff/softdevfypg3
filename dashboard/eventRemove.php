@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+$name_check = $_SESSION['data'];
+
+session_abort();
+
         $host = "localhost";
         $dbname = "gogigs";
         $username = "root";

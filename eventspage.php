@@ -65,7 +65,6 @@ $result = $mysqli-> query($sql);
                         <h2>".$row['event_name']. "</h2>
                         <div class='shortinfo'>
                             <div class='text-box'>
-                                <p>Description:" .$row["event_description"] ."</p>
                                 <p>Date:" .$row["event_date_start"] ."</p>
                                 <p>Price: $".$row["event_cost"] ."</p>
                             </div>
@@ -101,7 +100,6 @@ $result = $mysqli-> query($sql);
                         <h2>".$row['event_name']. "</h2>
                         <div class='shortinfo'>
                             <div class='text-box'>
-                                <p>Description:" .$row["event_description"] ."</p>
                                 <p>Date:" .$row["event_date_start"] ."</p>
                                 <p>Price: $".$row["event_cost"] ."</p>
                             </div>
@@ -125,7 +123,7 @@ $result = $mysqli-> query($sql);
             <?php
             $sql = "SELECT event_name,event_image, event_date_start, event_cost,event_description 
             FROM events_current
-            WHERE event_expiry='upcoming'";
+            WHERE event_expiry='past'";
 $result = $mysqli-> query($sql);
             if($result-> num_rows>0){
                 while ($row = $result-> fetch_assoc()){
@@ -137,7 +135,6 @@ $result = $mysqli-> query($sql);
                         <h2>".$row['event_name']. "</h2>
                         <div class='shortinfo'>
                             <div class='text-box'>
-                                <p>Description:" .$row["event_description"] ."</p>
                                 <p>Date:" .$row["event_date_start"] ."</p>
                                 <p>Price: $".$row["event_cost"] ."</p>
                             </div>

@@ -22,6 +22,6 @@ if (isset($_GET['event_names']) && !empty($_GET['event_names'])) {
             WHERE event_name='$data'";
     $result = $mysqli->query($query);
 
-    header("Location: ../dashMain.php");
+    header("Location: dashMain.php");
 die();
 ?>
