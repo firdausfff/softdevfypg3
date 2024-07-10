@@ -10,13 +10,14 @@ require_once 'include/signup_view.inc.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <link href="/assets/webfonts/uicons-brands.css" rel="stylesheet">
 
-    <title>Account</title>
 </head>
 
 <body>

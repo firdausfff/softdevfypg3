@@ -54,6 +54,7 @@ if (isset($_SESSION['name'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoGig | Profile Settings</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link href="/assets/webfonts/uicons-brands.css" rel="stylesheet">

@@ -38,6 +38,7 @@ while($row = $result->fetch_assoc()) {
 
 <head>
     <title>buy Ticket</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
     <style>
         body {
             font-family: 'Rubik';
