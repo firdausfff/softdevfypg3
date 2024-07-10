@@ -7,7 +7,7 @@
     <title>Login Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Rubik';
             display: flex;
             justify-content: center;
             align-items: center;

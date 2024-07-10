@@ -4,10 +4,10 @@
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: 'Rubik';
 }
 
 body {
-    font-family: Arial, sans-serif;
     font-size: 12px;
     line-height: 1em;
 }
@@ -33,7 +33,6 @@ input[type="submit"] {
 
 input::-webkit-input-placeholder {
     font-size: 0.85rem;
-    font-family: Arial, sans-serif;
     font-weight: 300;
     letter-spacing: 0.1rem;
     color: #ccc;
@@ -41,7 +40,6 @@ input::-webkit-input-placeholder {
 
 input:-ms-input-placeholder {
     font-size: 0.85rem;
-    font-family: Arial, sans-serif;
     font-weight: 300;
     letter-spacing: 0.1rem;
     color: #ccc;
@@ -49,7 +47,6 @@ input:-ms-input-placeholder {
 
 input::-ms-input-placeholder {
     font-size: 0.85rem;
-    font-family: Arial, sans-serif;
     font-weight: 300;
     letter-spacing: 0.1rem;
     color: #ccc;
@@ -57,7 +54,6 @@ input::-ms-input-placeholder {
 
 input::placeholder {
     font-size: 0.85rem;
-    font-family: Arial, sans-serif;
     font-weight: 300;
     letter-spacing: 0.1rem;
     color: #ccc;
@@ -283,7 +279,6 @@ input::placeholder {
     width: 100%;
     border-bottom: 1px solid #ccc;
     padding: 6px 20px 6px 0;
-    font-family: Arial, sans-serif;
     font-size: 1rem;
     font-weight: 300;
     color: gray;
@@ -310,7 +305,6 @@ input::placeholder {
 }
 
 .user_options-forms .forms_buttons-forgot {
-    font-family: Arial, sans-serif;
     letter-spacing: 0.1rem;
     color: blue;
     text-decoration: underline;
@@ -327,7 +321,6 @@ input::placeholder {
     border-radius: 3px;
     padding: 10px 35px;
     font-size: 1rem;
-    font-family: Arial, sans-serif;
     font-weight: 300;
     color: #fff;
     text-transform: uppercase;

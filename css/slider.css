@@ -1,6 +1,6 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Rubik';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -73,6 +73,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 250px;
+    filter: drop-shadow(15px 15px 8px #1a1b1c);
 }
 
 .card {

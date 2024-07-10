@@ -40,7 +40,7 @@ while($row = $result->fetch_assoc()) {
     <title>buy Ticket</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Rubik';
             background-color: #000;
             margin: 0;
             padding: 0;
