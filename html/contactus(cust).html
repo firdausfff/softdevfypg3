@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="/gogigs/css/header.css">
+    <link rel="stylesheet" href="/gogigs/css/footer.css">
+    <link rel="stylesheet" href="/gogigs/css/slider.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     
     <meta name="viewport" content="with=device-width, intial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="contactus.css">
+    <link rel="stylesheet" href="/gogigs/css/contactus.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
@@ -25,9 +25,9 @@
 <body style="background-color: white;">
 
     <div id="header"></div>
-
+<br><br><br>    
 <section class="location">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127562.25597370493!2d102.24490814999999!3d2.3993389499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1fd06215751d1%3A0xc72d74d5a9e9a62f!2sAlor%20Gajah%2C%20Malacca!5e0!3m2!1sen!2smy!4v1671886080459!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=3.1516964,101.6942371+(GoGigs)&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
     </section>
     
     <section class="contact-us">
@@ -59,7 +59,7 @@
         </div>
     <div class="contact-col">
         
-        <form action="include/contactus.inc.php" method="post">
+        <form action="/gogigs/include/contactus.inc.php" method="post">
         <input type="text" name="name" placeholder="Enter your name"required>
         <input type="email" name="email"placeholder="Enter your email address"required>
         <input type="text" name="subject"placeholder="Enter your subject"required>
@@ -75,14 +75,14 @@
  
 
     <!-- JavaScripts -->
-    <script src="scripts/slider.js"></script>
+    <script src="/gogigs/scripts/slider.js"></script>
     <script>
         // JavaScript to include header and footer
-        fetch('header.html')
+        fetch('/gogigs/customer/loggedinheader.php')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
 
-        fetch('footer.html')
+        fetch('/gogigs/footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

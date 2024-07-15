@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="/gogigs/css/header.css">
+    <link rel="stylesheet" href="/gogigs/css/footer.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <link href="/assets/webfonts/uicons-brands.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/productpage.css">
+    <link rel="stylesheet" href="/gogigs/css/productpage.css">
 
 </head>
 <body>
@@ -27,7 +27,7 @@
         <section class="section_section__gouit section_tightSection__Z3siX">
             <div class="section_content__7ryiz">
                 <div class="event_bannerBackground__Fepo5"><img alt="event banner"
-                        src="assets/banner/banner (1).png"
+                        src="/gogigs/assets/banner/banner (1).png"
                         class="event_banner__zbca2"></div>
                 <div class="event_field__lYkgZ event_border__cJ_l7">
                     <div class="event_basicInfoTable__Ufzj9">
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="event_toBuy__90XZ8"><a href="buyticket.html"><button 
+                <div class="event_toBuy__90XZ8"><a href="/gogigs/html/buyticket.html"><button 
                         class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium button_container__Hb1DM button_extra__v4rXV button_contained__m3HKX button_color-primary__nfxA6 mui-style-1ui1p20"
                         tabindex="0" type="button" style="text-transform:none"><span
                             class="button_letterSpacing__MWFlg"><span
@@ -113,14 +113,14 @@
 
 
     <!-- JavaScripts -->
-    <script src="scripts/slider.js"></script>
+    <script src="/gogigs/scripts/slider.js"></script>
     <script>
         // JavaScript to include header and footer
-        fetch('customer/loggedinheader.php')
+        fetch('/gogigs/customer/loggedinheader.php')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
 
-        fetch('footer.html')
+        fetch('/gogigs/footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

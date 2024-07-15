@@ -26,9 +26,9 @@ die ("Connection error" . $mysqli->connect_error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="/gogigs/css/header.css">
+    <link rel="stylesheet" href="/gogigs/css/footer.css">
+    <link rel="stylesheet" href="/gogigs/css/slider.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,11 +159,11 @@ $result = $mysqli-> query($sql);
     <!-- JavaScripts -->
     <script>
         // JavaScript to include header and footer
-        fetch('customer/loggedinheader.php')
+        fetch('/gogigs/customer/loggedinheader.php')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
 
-        fetch('footer.html')
+        fetch('/gogigs/footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

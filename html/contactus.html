@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="/gogigs/css/header.css">
+    <link rel="stylesheet" href="/gogigs/css/footer.css">
+    <link rel="stylesheet" href="/gogigs/css/slider.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     
     <meta name="viewport" content="with=device-width, intial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="contactus.css">
+    <link rel="stylesheet" href="/gogigs/css/contactus.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
         </div>
     <div class="contact-col">
         
-        <form action="include/contactus.inc.php" method="post">
+        <form action="/gogigs/include/contactus.inc.php" method="post">
         <input type="text" name="name" placeholder="Enter your name"required>
         <input type="email" name="email"placeholder="Enter your email address"required>
         <input type="text" name="subject"placeholder="Enter your subject"required>
@@ -75,14 +75,14 @@
  
 
     <!-- JavaScripts -->
-    <script src="scripts/slider.js"></script>
+    <script src="/gogigs/scripts/slider.js"></script>
     <script>
         // JavaScript to include header and footer
-        fetch('customer/loggedinheader.php')
+        fetch('/gogigs/header.html')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
 
-        fetch('footer.html')
+        fetch('/gogigs/footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

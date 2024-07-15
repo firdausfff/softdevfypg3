@@ -30,13 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($errors) {
             $_SESSION["errors_signup"] = $errors;
-            header("Location: ../account.php");
+            header("Location: /gogigs/php_files/account.php");
             die();
         }
 
         create_user( $pdo,  $pwd,  $name,  $email);
 
-        header("Location: ../account.html");
+        header("Location: /gogigs/html/account.html");
 
         $pdo = null;
         $stmt = null;
@@ -47,6 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
 } else {
-        header ("Location: ../account.html");
+        header ("Location: /gogigs/html/account.html");
         die();
 }

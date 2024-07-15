@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="icon" type="image/x-icon" href="assets/logo/favicon.png">
+    <link rel="stylesheet" href="/gogigs/css/header.css">
+    <link rel="stylesheet" href="/gogigs/css/footer.css">
+    <link rel="stylesheet" href="/gogigs/css/slider.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,101 +25,127 @@
 
 <body>
 
-    <div id="header"></div>
+<div id="header"></div>
 
-    <!-- Sliding Pictures -->
+<!-- Sliding Pictures -->
 
-    <div class="container">
-        <!-- Image Slider -->
-        <div class="slider">
-            <div class="slides">
-                <div class="slide"><img src="assets/banner/banner (4).png" alt="Image 1"></div>
-                <div class="slide"><img src="assets/banner/banner (5).png" alt="Image 2"></div>
-                <div class="slide"><img src="assets/banner/banner (1).png" alt="Image 3"></div>
-            </div>
-            <div class="slidernavigation">
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
-            </div>
+<div class="container">
+    <!-- Image Slider -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="/gogigs/assets/banner/pleasantrees.png" alt="Image 1"></div>
+            <div class="slide"><img src="/gogigs/assets/banner/risingfest.png" alt="Image 2"></div>
+            <div class="slide"><img src="/gogigs/assets/banner/indienasional.png" alt="Image 3"></div>
+            <div class="slide"><img src="/gogigs/assets/banner/indiepologies3.png" alt="Image 4"></div>
+            <div class="slide"><img src="/gogigs/assets/banner/unity.png" alt="Image 5"></div>
         </div>
+        <div class="slidernavigation">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
 
-        <!-- Section 1: Responsive CSS Cards -->
-        <div class="card-section">
-            <h2>Trending Events</h2>
-            <div class="card-container">
-                <div class="card">
-                    <a href="productpage.html">
-                        <img src="assets/images/square (1).png" alt="Card 1">
-                    </a>
-                    <div class="content">
-                        <h2>Card Title 1</h2>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/images/square (2).png" alt="Card 2">
-                    <div class="content">
-                        <h2>Card Title 2</h2>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/images/square (3).png" alt="Card 3">
-                    <div class="content">
-                        <h2>Card Title 3</h2>
-                    </div>
+    <!-- Section 1: Responsive CSS Cards -->
+    <div class="card-section">
+        <h2>Trending Events</h2>
+        <div class="card-container">
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                    <img src="/gogigs/assets/images/indiepologies2.png" alt="Card 1">
+                </a>
+                <div class="content">
+                    <h2>Indiepologies Vol. 2 </h2>
                 </div>
             </div>
-        </div>
-
-        <!-- Section 2: Responsive CSS Cards -->
-        <div class="card-section">
-            <h2>Upcoming Events</h2>
-            <div class="card-container">
-                <div class="card">
-                    <img src="assets/images/square (4).png" alt="Card 4">
-                    <div class="content">
-                        <h2>Card Title 4</h2>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/images/square (5).png" alt="Card 5">
-                    <div class="content">
-                        <h2>Card Title 5</h2>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="rawspiritsquare.png" alt="Card 6">
-                    <div class="content">
-                        <h2>Card Title 6</h2>
-                    </div>
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/risingfest.png" alt="Card 2">
+                </a>
+                <div class="content">
+                    <h2>Rising Fest 8</h2>
                 </div>
             </div>
-        </div>
-
-        <!-- Section 3: Responsive CSS Cards -->
-        <div class="card-section">
-            <h2>Past Events</h2>
-            <div class="card-container">
-                <div class="card">
-                    <img src="rawspiritsquare.png" alt="Card 7">
-                    <div class="content">
-                        <h2>Card Title 7</h2>
-                    </div>
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/pleasentrees.png" alt="Card 3">
+                </a>
+                <div class="content">
+                    <h2>Pleasantrees : Thought I'd let you know</h2>
                 </div>
-                <div class="card">
-                    <img src="rawspiritsquare.png" alt="Card 8">
-                    <div class="content">
-                        <h2>Card Title 8</h2>
-                    </div>
+            </div>
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/indienasional.png" alt="Card 3">
+                </a>
+                <div class="content">
+                    <h2>Indienasional Vol. 6</h2>
                 </div>
-                <div class="card">
-                    <img src="rawspiritsquare.png" alt="Card 9">
-                    <div class="content">
-                        <h2>Card Title 9</h2>
-                    </div>
+            </div>
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/pitstop.png" alt="Card 3">
+                </a>
+                <div class="content">
+                    <h2>Pitstop DJ Night</h2>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Section 2: Responsive CSS Cards -->
+    <div class="card-section">
+        <h2>Upcoming Events</h2>
+        <div class="card-container">
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/indiepologies3.png" alt="Card 4">
+                </a>
+                <div class="content">
+                    <h2>Indiepologies Vol. 3</h2>
+                </div>
+            </div>
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/unity.png" alt="Card 5">
+                </a>
+                <div class="content">
+                    <h2>Unity</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Responsive CSS Cards -->
+    <div class="card-section">
+        <h2>Past Events</h2>
+        <div class="card-container">
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/monsoon.png" alt="Card 7">
+                </a>
+                <div class="content">
+                    <h2>Monsoon Madness</h2>
+                </div>
+            </div>
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/rotanlot.png" alt="Card 8">
+                </a>
+                <div class="content">
+                    <h2>Rotan Lot Holiday Home Market</h2>
+                </div>
+            </div>
+            <div class="card">
+                <a href="/gogigs/productpage.html">
+                <img src="/gogigs/assets/images/magnificent.png" alt="Card 9">
+                </a>
+                <div class="content">
+                    <h2>Magnificent 8 , Volume 22</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div id="footer"></div>
  
@@ -123,11 +154,11 @@
     <script src="scripts/slider.js"></script>
     <script>
         // JavaScript to include header and footer
-        fetch('customer/loggedinheader.html')
+        fetch('/gogigs/customer/loggedinheader.php')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
 
-        fetch('footer.html')
+        fetch('/gogigs/footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

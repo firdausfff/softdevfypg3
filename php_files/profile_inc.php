@@ -58,9 +58,9 @@ if (isset($_SESSION['name'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link href="/assets/webfonts/uicons-brands.css" rel="stylesheet">
-    <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="/gogigs/css/header.css">
+    <link rel="stylesheet" href="/gogigs/css/profile.css">
+    <link rel="stylesheet" href="/gogigs/css/footer.css">
 </head>
 
 <body>
@@ -292,11 +292,11 @@ if (isset($_SESSION['name'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // JavaScript to include header and footer
-        fetch('customer/loggedinheader.php')
+        fetch('/gogigs/customer/loggedinheader.php')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
 
-        fetch('footer.html')
+        fetch('/gogigs/footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
     </script>

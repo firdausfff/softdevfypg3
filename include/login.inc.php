@@ -36,13 +36,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $_SESSION['name'] = $namereceive;
         $_SESSION['login_yes'] = 1;
 
-        header("Location: ../custMain.php"); 
+        header("Location: /gogigs/php_files/custMain.php"); 
         die();
     } else {
         //login failed
         echo "<script>
                 alert('Login failed. Please check your email and password.');
-                window.location.href = '../account.html';
+                window.location.href = '/gogigs/html/account.html';
               </script>";
         die();
     }
