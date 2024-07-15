@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+
+    <!--custom css file link -->
+    <link rel="stylesheet" href="/gogigs/gogigs_website/css/card.css">
+</head>
+<body>
+
+    <div class="container">
+        <form action="/gogigs/gogigs_website/includes/card.php" method="post">
+        <div class="row">
+
+            <div class="col">
+                <h3 class="title">billing account</h3>
+                <div class="inputBox">
+                    <span>full name :</span>
+                    <input type="text" name="fullname" placeholder="johan kancil" required autofocus>
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" name="email" placeholder="youremail@email.com" required autofocus>
+                </div>
+                <div class="inputBox">
+                    <span>address :</span>
+                    <input type="text" name="address" placeholder="room - street -" required autofocus>
+                </div>
+                <div class="inputBox">
+                    <span>city :</span>
+                    <input type="text" name="city" placeholder="Setiawangsa" required autofocus>
+                </div>
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>zipcode</span>
+                        <input type="text" name="zipcode" placeholder="541000" required autofocus>
+                    </div>
+
+                </div>
+            </div>
+        
+
+        <div class="col">
+            <h3 class="title">payment</h3>
+
+            <div class="inputBox">
+                <span>cards accepted :</span>
+            <img src="/gogigs/gogigs_website/images/card_img.png" alt="">
+            </div>
+
+            <div class="inputBox">
+                <span>name on card :</span>
+                <input type="text" name="cardname" placeholder="mr. johan kancil" required autofocus>
+            </div>
+
+            <div class="inputBox">
+                <span>credit card number :</span>
+                <input type="number" name="cardnumber" placeholder="0000-0000-0000-0000" required autofocus>
+            </div>
+            <div class="inputBox">
+                <span>expiry month :</span>
+                <input type="text" name="expmonth" placeholder="february" required autofocus>
+            </div>
+            <div class="flex">
+                <div class="inputBox">
+                    <span>expiry year</span>
+                    <input type="number" name="expyear" placeholder="1999" required autofocus>
+                </div>
+
+                <div class="inputBox">
+                    <span>CVV </span>
+                    <input type="number" name="cvv" placeholder="999" required autofocus>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <input type="submit" value="Add Card" class="submit-btn">
+
+
+    </form>
+
+        </div>
+
+</body>
+</html>
