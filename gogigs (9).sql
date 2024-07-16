@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2024 at 12:38 PM
+-- Generation Time: Jul 16, 2024 at 01:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,26 +40,11 @@ CREATE TABLE `admin_acc` (
 --
 
 INSERT INTO `admin_acc` (`id`, `admin_ID`, `name`, `password`, `email`) VALUES
-(1, 'veid1234', 'Erik Erikson', 'nazim1982', 'wacha@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin_pfp`
---
-
-CREATE TABLE `admin_pfp` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `admin_pfp`
---
-
-INSERT INTO `admin_pfp` (`id`, `name`, `img`) VALUES
-(1, 'veid1234', 'pitstop.png');
+(1, 'veid1234', 'Erik Erikson', 'nazim1982', 'wacha@gmail.com'),
+(2, 'lola3922', 'Lola Adams', 'nazim1982', 'loladams@gmail.com'),
+(3, 'hilm9232', 'Nazim Hilman', 'barrel19', 'nazimhilman@gmail.com'),
+(4, 'fird2381', 'Firdaus Farhan', 'firdaus1232', 'firdausfarhan@gmail.com'),
+(5, 'haziq2131', 'Muhammad Haziq ', 'haziq2313213', 'muhdhaziq@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -82,7 +67,11 @@ CREATE TABLE `admin_profile` (
 --
 
 INSERT INTO `admin_profile` (`id`, `admin_ID`, `admin_address`, `admin_email`, `admin_contact`, `admin_github`, `admin_linkedin`) VALUES
-(1, 'veid1234', 'Something', 'Shazlin@kolejspace.edu.my', '+0184949233', 'Nazim Hilman', 'https://www.linkedin.com/in/nazim-hilman-270528315/');
+(1, 'veid1234', 'Something', 'Shazlin@kolejspace.edu.my', '+0184949233', 'Nazim Hilman', 'https://www.linkedin.com/in/nazim-hilman-270528315/'),
+(2, 'lola3932', 'Setapak Jaya', 'loladams@gmail.com', '+60122391231', 'Loladams123', 'Loladams123'),
+(3, 'hilm9232', 'Alor Gajah Melaka', 'nazimhilman@gmail.com', '+60184066925', 'Eric Adams', 'Eric Adams'),
+(4, 'fird2381', 'Kl East Kuala Lumpur', 'firdausfarhan@gmail.com', '+60138293123', 'Firdaus Farhan', 'Firdaus Farhan'),
+(5, 'haziq2131', 'Kl East Kuala Lumpur', 'muhdhaziq@gmail.com', '+60182323292', 'haziq0128', 'Muhammad Haziq');
 
 -- --------------------------------------------------------
 
@@ -111,7 +100,9 @@ CREATE TABLE `card_information` (
 INSERT INTO `card_information` (`id`, `fullname`, `email`, `address`, `city`, `zipcode`, `cardname`, `cardnumber`, `expmonth`, `expyear`, `cvv`) VALUES
 (1, 'Nazim Hilman', 'email@gmail.com', 'no.1 Jalan Handalan 1/4, Kementah,', 'Setiawangsa', 541000, 'Mr.Nazim Hilman', 2147483647, 'january', 2024, 623),
 (2, 'Eric Eridy', 'lottle@gmail.com', '1007 John Calvin Drive', 'Hillside', 60162, 'Mr.Eric Eridy', 2147483647, 'March', 2025, 432),
-(3, 'Nur Shazlin Binti Mohd Azhari', 'Shazlin@kolejspace.edu.my', 'Setiawangsa,Mindef,', 'Setiawangsa', 510000, 'Mrs.Shazlin ', 2147483647, 'March', 2025, 322);
+(3, 'Nur Shazlin Binti Mohd Azhari', 'Shazlin@kolejspace.edu.my', 'Setiawangsa,Mindef,', 'Setiawangsa', 510000, 'Mrs.Shazlin ', 2147483647, 'March', 2025, 322),
+(4, 'Lylod Buster', 'lylod@gmail.com', 'Setapak Jaya Kuala Lumpur', 'Kuala Lumpur', 534110, 'Mr.Lylod Buster', 858725473, 'January', 2026, 231),
+(5, 'Samantha Smith', 'smith@gmail.com', 'World Trade Center Washington DC', 'Washington', 123122, 'Mrs.Samantha', 236234234, 'March', 2026, 512);
 
 -- --------------------------------------------------------
 
@@ -236,60 +227,9 @@ CREATE TABLE `feedback_form` (
 INSERT INTO `feedback_form` (`id`, `name`, `email`, `subject`, `message`) VALUES
 (1, 'Nazim Hilman Bin Hashim', 'nazimhilman@yahoo.com', 'Concern over your saving system', 'Somethings wrong here i can feel it'),
 (2, 'Jerry Smith', 'Jerry@gmail.com', 'I heckin love coding', 'Coding is so good and fun im enjoying a blast'),
-(3, 'Armand', 'armand@gmail.com', 'I have a complaining', 'this is a test');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pfp_test`
---
-
-CREATE TABLE `pfp_test` (
-  `id` int(11) NOT NULL,
-  `img` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `pfp_test`
---
-
-INSERT INTO `pfp_test` (`id`, `img`) VALUES
-(1, '6dac8dac19777f25820a9ea0da6f73ef7cb5cd19.png'),
-(2, '6dac8dac19777f25820a9ea0da6f73ef7cb5cd19.png'),
-(3, '6dac8dac19777f25820a9ea0da6f73ef7cb5cd19.png'),
-(4, '1-intro-photo-final.jpg'),
-(5, '1-intro-photo-final.jpg'),
-(6, '1-intro-photo-final.jpg'),
-(7, '2abd0e42d24d45fc61be5bc6d88125c907cedc89.png'),
-(8, '2abd0e42d24d45fc61be5bc6d88125c907cedc89.png'),
-(9, '6dac8dac19777f25820a9ea0da6f73ef7cb5cd19.png');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `profile_info`
---
-
-CREATE TABLE `profile_info` (
-  `id` int(11) NOT NULL,
-  `prof_name` varchar(255) NOT NULL,
-  `prof_email` varchar(255) NOT NULL,
-  `prof_birthday` varchar(255) NOT NULL,
-  `prof_country` varchar(255) NOT NULL,
-  `prof_PN` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ticket_counter`
---
-
-CREATE TABLE `ticket_counter` (
-  `id` int(11) NOT NULL,
-  `ticket_bought` int(200) NOT NULL,
-  `ticket_cash` int(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(3, 'Armand', 'armand@gmail.com', 'I have a complaining', 'this is a test'),
+(4, 'Iqbal', 'iqbal@gmail.com', 'A complain about the website', 'This website doesnt have the item i want'),
+(5, 'Nurin', 'nurin@gmail.com', 'A complain about the store', 'all the bands are not malaysian made');
 
 --
 -- Indexes for dumped tables
@@ -301,12 +241,6 @@ CREATE TABLE `ticket_counter` (
 ALTER TABLE `admin_acc`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admin_ID` (`admin_ID`);
-
---
--- Indexes for table `admin_pfp`
---
-ALTER TABLE `admin_pfp`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `admin_profile`
@@ -346,18 +280,6 @@ ALTER TABLE `feedback_form`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pfp_test`
---
-ALTER TABLE `pfp_test`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `profile_info`
---
-ALTER TABLE `profile_info`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -365,25 +287,19 @@ ALTER TABLE `profile_info`
 -- AUTO_INCREMENT for table `admin_acc`
 --
 ALTER TABLE `admin_acc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `admin_pfp`
---
-ALTER TABLE `admin_pfp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `admin_profile`
 --
 ALTER TABLE `admin_profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `card_information`
 --
 ALTER TABLE `card_information`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `customer_acc`
@@ -407,19 +323,7 @@ ALTER TABLE `events_current`
 -- AUTO_INCREMENT for table `feedback_form`
 --
 ALTER TABLE `feedback_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `pfp_test`
---
-ALTER TABLE `pfp_test`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `profile_info`
---
-ALTER TABLE `profile_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
